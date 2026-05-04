@@ -35,3 +35,39 @@ body {
   background: #08161f;
 }
 
+.page-header h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.page-header p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.badge {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  padding: 4px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 3px;
+  color: var(--line-cyan);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.tabs {
+  display: flex;
+  gap: 2px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--bg-deep);
+}
