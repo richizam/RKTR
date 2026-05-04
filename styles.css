@@ -1,0 +1,37 @@
+:root {
+  --bg-deep: #06121d;
+  --bg-canvas: #0a1825;
+  --bg-panel: #0e2233;
+  --line-cyan: #3ae0ff;
+  --line-cyan-hi: #7ff0ff;
+  --line-soft: #213a52;
+  --status-running: #4ade80;
+  --status-warning: #fbbf24;
+  --status-error: #ef4444;
+  --text-primary: #e5e7eb;
+  --text-muted: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: "Segoe UI", Inter, system-ui, Arial, sans-serif;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 28px 12px;
+  border-bottom: 1px solid var(--line-soft);
+  background: #08161f;
+}
+
