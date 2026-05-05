@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1920"
+     height="1080"
+     viewBox="0 0 1920 1080"
+     preserveAspectRatio="xMidYMid meet"
+     role="img"
+     aria-label="Railway wheel machining line - RKTR / MAG India MES schematic">
+  <title>Machining Line — RKTR / MAG India</title>
+
+  <style>
+    .bg { fill: #0a1825; }
+    .grid { stroke: #142c3f; stroke-width: .6; opacity: .55; }
+    .cad-line { stroke: #3ae0ff; stroke-width: 1; fill: none; opacity: .62; stroke-linecap: round; stroke-linejoin: round; }
+    .cad-faint { stroke: #6b7785; stroke-width: .8; fill: none; opacity: .2; }
+    .title { fill: #e5e7eb; font: 650 25px "Segoe UI", Arial, sans-serif; letter-spacing: 1.2px; }
+    .subtitle { fill: #8a98a8; font: 400 12px "Segoe UI", Arial, sans-serif; letter-spacing: .6px; }
+    .source-zone { fill: none; stroke: #facc15; stroke-width: 2; stroke-dasharray: 12 8; opacity: .82; }
+    .source-label { fill: #facc15; font: 650 14px "Segoe UI", Arial, sans-serif; letter-spacing: 1px; }
+    .rail { stroke: #3ae0ff; stroke-width: 2; opacity: .74; }
+    .rail-tick { stroke: #3ae0ff; stroke-width: .8; opacity: .42; }
+    .rail-label { fill: #facc15; font: 650 11px "Segoe UI", Arial, sans-serif; letter-spacing: .8px; }
+    .station-frame { fill: #0e2233; stroke: #3ae0ff; stroke-width: 1.4; transition: stroke .16s, filter .16s; }
+    .station:hover .station-frame { stroke: #7ff0ff; filter: drop-shadow(0 0 6px #3ae0ff); cursor: pointer; }
+    .label-box { fill: #081827; stroke: #1c8da3; stroke-width: 1.2; }
+    .station-num { fill: #e5e7eb; font: 650 12px "Segoe UI", Arial, sans-serif; }
+    .station-label { fill: #e5e7eb; font: 650 10.5px "Segoe UI", Arial, sans-serif; text-anchor: middle; letter-spacing: .35px; }
+    .station-sublabel { fill: #a8b5c3; font: 500 9px "Segoe UI", Arial, sans-serif; text-anchor: middle; letter-spacing: .25px; }
+    .op-code { fill: #7ddf4a; font: 650 9px Consolas, monospace; text-anchor: middle; }
+    .ctrl-label { fill: #3ae0ff; font: 500 7.5px Consolas, "Courier New", monospace; text-anchor: middle; letter-spacing: .2px; }
+    .monitor-link { stroke: #7ddf4a; stroke-width: 1.4; opacity: .85; }
+    .status-dot { stroke: #0a1825; stroke-width: 1.4; }
+    .status-idle .status-dot { fill: #6b7785; }
+    .status-running .status-dot { fill: #4ade80; animation: dot-pulse 2.4s ease-in-out infinite; }
+    .status-warning .status-dot { fill: #fbbf24; }
+    .status-error .status-dot { fill: #ef4444; }
