@@ -41,3 +41,18 @@
       <div class="canvas">
         <div class="cad-mount" data-line="Testing line" data-src="testing-line.svg" aria-label="Testing line schematic"></div>
       </div>
+      <p class="note">
+        Simplified CAD-like MES visualization prototype. Final geometry is vector SVG; source layout is the docx CAD sheet.
+      </p>
+    </section>
+  </main>
+
+  <div id="popup-backdrop" class="popup-backdrop" aria-hidden="true"></div>
+  <aside id="trace-popup" class="trace-popup" role="dialog" aria-label="Traceability" aria-modal="true">
+    <div class="head">
+      <div>
+        <div class="title">Traceability - Wheel Record</div>
+        <div class="source"></div>
+      </div>
+      <button class="close-btn" type="button" aria-label="Close">x</button>
+    </div>
