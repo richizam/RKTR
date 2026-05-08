@@ -64,3 +64,35 @@ const WHEELS = {
 
 /* Display-side definition of each line's station sequence. Drives the
  * Route list in the wheel drawer (one row per zone, in plant order).
+ * `op` is the operation tag (or "buffer"/"outfeed" for staging zones);
+ * `code` is the short machine code shown next to it.                     */
+const ROUTE_ZONES = {
+  "Machining line": [
+    { zoneId: "Z-INFEED",  op: "buffer",  code: "Infeed" },
+    { zoneId: "Z-OP05",    op: "OP05",    code: "CAM-01" },
+    { zoneId: "Z-VTL1",    op: "OP10/20", code: "VTL-01" },
+    { zoneId: "Z-VTL2",    op: "OP10/20", code: "VTL-02" },
+    { zoneId: "Z-VTL3",    op: "OP10/20", code: "VTL-03" },
+    { zoneId: "Z-VTL4",    op: "OP10/20", code: "VTL-04" },
+    { zoneId: "Z-VTL5",    op: "OP10/20", code: "VTL-05" },
+    { zoneId: "Z-OP30",    op: "OP30",    code: "HMC-01" },
+    { zoneId: "Z-OUTFEED", op: "outfeed", code: "Outfeed" },
+  ],
+  "Testing line": [
+    { zoneId: "Z-FEED",  op: "buffer", code: "Infeed (from ML)" },
+    { zoneId: "Z-OP40",  op: "OP40",   code: "BAL-01" },
+    { zoneId: "Z-OP50",  op: "OP50",   code: "WSH-01" },
+    { zoneId: "Z-OP60",  op: "OP60",   code: "MSR-01" },
+    { zoneId: "Z-OP70A", op: "OP70",   code: "UT-01" },
+    { zoneId: "Z-OP70B", op: "OP70",   code: "UT-02" },
+    { zoneId: "Z-OP70C", op: "OP70",   code: "UT-03" },
+    { zoneId: "Z-OP80",  op: "OP80",   code: "MRK-01" },
+    { zoneId: "Z-OP90",  op: "OP90",   code: "MPT-01" },
+    { zoneId: "Z-OP100", op: "OP100",  code: "WSH-01" },
+    { zoneId: "Z-OP110", op: "OP110",  code: "PEN-01" },
+    { zoneId: "Z-OP130", op: "OP130",  code: "VIS-01" },
+    { zoneId: "Z-OP140", op: "OP140",  code: "CNV-01" },
+  ],
+};
+
+function findRouteZone(lineName, zoneId) {
