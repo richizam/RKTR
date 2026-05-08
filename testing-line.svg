@@ -154,3 +154,55 @@
     <text class="ctrl-label" x="60" y="86">IPC/PLC</text>
     <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
     <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP40</text>
+    <text class="station-label" x="60" y="154">BALANCING</text>
+    <text class="station-label" x="60" y="167">STATION</text>
+  </g>
+
+  <!-- STATION 02: OP50 Washing & Drying -->
+  <g id="station-test-02" class="station status-running"
+     data-station-name="OP50 WASHING &amp; DRYING STATION"
+     data-machine-id="RKTR-OP50-WSH-01"
+     data-zone-id="Z-OP50"
+     data-zone-kind="station"
+     data-controller="IPC/PLC"
+     transform="translate(257 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP50</text>
+    <image href="images/op50-op100-wash.png" xlink:href="images/op50-op100-wash.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">IPC/PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP50</text>
+    <text class="station-label" x="60" y="154">WASHING &amp;</text>
+    <text class="station-label" x="60" y="167">DRYING</text>
+  </g>
+
+  <!-- STATION 03: OP60 Measuring -->
+  <g id="station-test-03" class="station status-running"
+     data-station-name="OP60 MEASURING STATION"
+     data-machine-id="RKTR-OP60-MSR-01"
+     data-zone-id="Z-OP60"
+     data-zone-kind="station"
+     data-controller="PC"
+     transform="translate(406 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP60</text>
+    <image href="images/op60-measure.png" xlink:href="images/op60-measure.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP60</text>
+    <text class="station-label" x="60" y="154">MEASURING</text>
+    <text class="station-label" x="60" y="167">STATION</text>
+  </g>
+
+  <!-- STATION 04: OP70A Ultrasonic -->
+  <g id="station-test-04" class="station status-running"
+     data-station-name="OP70A ULTRASONIC TESTING"
+     data-machine-id="RKTR-OP70-UT-01"
