@@ -31,3 +31,36 @@ const WHEELS = {
     currentZone: null,
     currentLine: null,
     inTransit: false,
+    transitTo: null,
+    route: [],
+  },
+  "SN-000129-MAGI": {
+    serial: "SN-000129-MAGI",
+    manufactureCode: "RKTR-WHL-2026-05-00129",
+    stamp: "05 / 2026  14:39:18",
+    heatCode: "H-2026-K-0042",
+    partType: "LHB Wheel Type 101",
+    dimensions: "OD 957 mm / ID 175 mm / web 38 mm",
+    currentZone: null,
+    currentLine: null,
+    inTransit: false,
+    transitTo: null,
+    route: [],
+  },
+  "SN-000130-MAGI": {
+    serial: "SN-000130-MAGI",
+    manufactureCode: "RKTR-WHL-2026-05-00130",
+    stamp: "05 / 2026  14:41:55",
+    heatCode: "H-2026-K-0043",
+    partType: "LHB Wheel Type 101",
+    dimensions: "OD 957 mm / ID 175 mm / web 38 mm",
+    currentZone: null,
+    currentLine: null,
+    inTransit: false,
+    transitTo: null,
+    route: [],
+  },
+};
+
+/* Display-side definition of each line's station sequence. Drives the
+ * Route list in the wheel drawer (one row per zone, in plant order).
