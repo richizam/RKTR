@@ -96,3 +96,36 @@ const ROUTE_ZONES = {
 };
 
 function findRouteZone(lineName, zoneId) {
+  const list = ROUTE_ZONES[lineName] || [];
+  for (const z of list) if (z.zoneId === zoneId) return z;
+  return null;
+}
+
+function formatNowHMS() {
+  const d = new Date();
+  const pad = (n) => String(n).padStart(2, "0");
+  return pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+}
+
+const STATUS = {
+  "status-running": { chip: "working", text: "Working" },
+  "status-warning": { chip: "stopped", text: "Stopped" },
+  "status-error":   { chip: "off",     text: "Off" },
+  "status-idle":    { chip: "unknown", text: "No data" },
+  "status-offline": { chip: "unknown", text: "Offline" },
+};
+
+/* Gantry geometry per line. baseCenterX is the X (in SVG viewBox units) of
+ * the icon center when the gantry sits at its home position (no translate).
+ * The rail bounds are used to clamp gantry travel so the icon does not
+ * visually leave the rail.                                               */
+const GANTRIES = {
+  "Machining line": {
+    rail: { min: 62, max: 1858 },
+    heads: [
+      { selector: ".gantry.gantry-1", baseCenterX: 526,  currentX: 0 }, // Area Gantry 1
+      { selector: ".gantry.gantry-2", baseCenterX: 1394, currentX: 0 }, // Area Gantry 2
+    ],
+  },
+  "Testing line": {
+    rail: { min: 50, max: 1867 },
