@@ -129,3 +129,35 @@ const GANTRIES = {
   },
   "Testing line": {
     rail: { min: 50, max: 1867 },
+    heads: [
+      { selector: ".gantry.gantry-1", baseCenterX: 346,  currentX: 0 }, // Linear Gantry 3
+      { selector: ".gantry.gantry-2", baseCenterX: 926,  currentX: 0 }, // Linear Gantry 4
+      { selector: ".gantry.gantry-3", baseCenterX: 1522, currentX: 0 }, // Linear Gantry 5
+    ],
+  },
+};
+
+/* Scripted PLC journeys. Each event is one of:
+ *   { serial, from, to, gantry }  - pick-and-carry move
+ *   { kind: "status", zone, to }  - flip a station's status class
+ * The runner awaits each move's animation before emitting the next.    */
+/* Each journey visits every station along the line, one neighbour at a
+ * time. Gantry index is chosen so each head only handles stations within
+ * its rail segment — no head skips far past its assigned range.        */
+const JOURNEYS = {
+  "Machining line": buildMachiningJourney(),
+  "Testing line": buildTestingJourney(),
+};
+
+function buildMachiningJourney() {
+  const events = [];
+  const serials = ["SN-000128-MAGI", "SN-000129-MAGI", "SN-000130-MAGI"];
+  /* Gantry 0 = Area Gantry 1 (infeed side), Gantry 1 = Area Gantry 2 (outfeed side) */
+  const pairs = [
+    { from: "Z-INFEED", to: "Z-OP05",    g: 0 },
+    { from: "Z-OP05",   to: "Z-VTL1",    g: 0 },
+    { from: "Z-VTL1",   to: "Z-VTL2",    g: 0 },
+    { from: "Z-VTL2",   to: "Z-VTL3",    g: 0 },
+    { from: "Z-VTL3",   to: "Z-VTL4",    g: 1 },
+    { from: "Z-VTL4",   to: "Z-VTL5",    g: 1 },
+    { from: "Z-VTL5",   to: "Z-OP30",    g: 1 },
