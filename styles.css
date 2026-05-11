@@ -144,3 +144,40 @@ body {
   font-size: 12px;
 }
 
+.popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  background: rgba(6, 18, 29, 0.68);
+  backdrop-filter: blur(2px);
+}
+
+.popup-backdrop.show {
+  display: block;
+}
+
+.trace-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 60;
+  display: none;
+  width: min(560px, calc(100vw - 40px));
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 1px solid var(--line-cyan);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  box-shadow: 0 0 24px rgba(58, 224, 255, 0.18), 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+
+.trace-popup.show {
+  display: block;
+}
+
+.trace-popup .head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
