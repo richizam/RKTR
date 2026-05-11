@@ -161,3 +161,36 @@ function buildMachiningJourney() {
     { from: "Z-VTL3",   to: "Z-VTL4",    g: 1 },
     { from: "Z-VTL4",   to: "Z-VTL5",    g: 1 },
     { from: "Z-VTL5",   to: "Z-OP30",    g: 1 },
+    { from: "Z-OP30",   to: "Z-OUTFEED", g: 1 },
+  ];
+  for (const serial of serials) {
+    for (const p of pairs) events.push({ serial, from: p.from, to: p.to, gantry: p.g });
+  }
+  return events;
+}
+
+function buildTestingJourney() {
+  const events = [];
+  const serials = ["SN-000128-MAGI", "SN-000129-MAGI"];
+  /* Gantry 0 = Linear Gantry 3, Gantry 1 = LG4, Gantry 2 = LG5 */
+  const pairs = [
+    { from: "Z-FEED",   to: "Z-OP40",   g: 0 },
+    { from: "Z-OP40",   to: "Z-OP50",   g: 0 },
+    { from: "Z-OP50",   to: "Z-OP60",   g: 0 },
+    { from: "Z-OP60",   to: "Z-OP70A",  g: 0 },
+    { from: "Z-OP70A",  to: "Z-OP70B",  g: 1 },
+    { from: "Z-OP70B",  to: "Z-OP70C",  g: 1 },
+    { from: "Z-OP70C",  to: "Z-OP80",   g: 1 },
+    { from: "Z-OP80",   to: "Z-OP90",   g: 1 },
+    { from: "Z-OP90",   to: "Z-OP100",  g: 2 },
+    { from: "Z-OP100",  to: "Z-OP110",  g: 2 },
+    { from: "Z-OP110",  to: "Z-OP130",  g: 2 },
+    { from: "Z-OP130",  to: "Z-OP140",  g: 2 },
+  ];
+  for (const serial of serials) {
+    for (const p of pairs) events.push({ serial, from: p.from, to: p.to, gantry: p.g });
+  }
+  return events;
+}
+
+const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
