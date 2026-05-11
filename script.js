@@ -194,3 +194,35 @@ function buildTestingJourney() {
 }
 
 const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Mutable runtime state. */
+const zoneRegistry   = { "Machining line": {}, "Testing line": {} };
+const zoneOccupancy  = { "Machining line": {}, "Testing line": {} };
+/* Last serial known to have been at each zone. Pre-seeded at init so that
+ * any click before the mock PLC reaches that zone still shows real-looking
+ * data. Carry routine updates this on every arrival; zoneOccupancy still
+ * holds the strict "wheel is here right now" truth.                        */
+const lastWheelAtZone = { "Machining line": {}, "Testing line": {} };
+const svgRefs        = { "Machining line": null, "Testing line": null };
+const plcRunning     = { "Machining line": false, "Testing line": false };
+
+/* Currently-selected equipment, used by the Process Parameters panel. */
+let currentParamKey = null;
+let currentParamName = "";
+
+/* Serial of the wheel currently displayed in the wheel drawer (null when
+ * the drawer is closed). Used by pickAndCarry to refresh the drawer
+ * live as the wheel moves.                                              */
+let currentDrawerSerial = null;
+
+/* -------------------- 2. Bootstrap --------------------------------------- */
+
+document.addEventListener("DOMContentLoaded", () => {
+  initTabs();
+  initPopup();
+  initWheelDrawer();
+  initParamPanel();
+  initSvgObjects();
+});
+
+function initTabs() {
