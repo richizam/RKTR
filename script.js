@@ -356,3 +356,36 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 /* One wheel sprite per gantry, so multiple gantries can carry wheels in
  * parallel. Each sprite is hidden until its gantry starts a carry.       */
 function injectWheelSprite(svgRoot, lineName) {
+  const ownerDoc = svgRoot.ownerDocument;
+  const layerId = lineName === "Machining line"
+    ? "wheel-sprite-layer-machining"
+    : "wheel-sprite-layer-testing";
+  const symbolId = lineName === "Machining line" ? "icon-wheel-m" : "icon-wheel-t";
+
+  let layer = svgRoot.querySelector("#" + layerId);
+  if (!layer) {
+    layer = ownerDoc.createElementNS(SVG_NS, "g");
+    layer.setAttribute("id", layerId);
+    svgRoot.appendChild(layer);
+  }
+
+  const heads = GANTRIES[lineName].heads;
+  for (let i = 0; i < heads.length; i++) {
+    const spriteId = layerId + "-" + i;
+    if (svgRoot.querySelector("#" + spriteId)) continue;
+    const sprite = ownerDoc.createElementNS(SVG_NS, "g");
+    sprite.setAttribute("id", spriteId);
+    sprite.setAttribute("class", "wheel-sprite wheel-anchor");
+    sprite.setAttribute("data-station-name", "WHEEL IN TRANSIT");
+    sprite.style.display = "none";
+    const use = ownerDoc.createElementNS(SVG_NS, "use");
+    use.setAttribute("href", "#" + symbolId);
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#" + symbolId);
+    use.setAttribute("width", "44");
+    use.setAttribute("height", "44");
+    use.setAttribute("x", "-22");
+    use.setAttribute("y", "-22");
+    sprite.appendChild(use);
+    layer.appendChild(sprite);
+  }
+}
