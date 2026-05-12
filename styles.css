@@ -254,3 +254,39 @@ body {
 }
 
 .chip.stopped {
+  color: var(--status-warning);
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.chip.off {
+  color: var(--status-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.chip.unknown {
+  color: var(--text-muted);
+  background: rgba(156, 163, 175, 0.06);
+}
+
+.trace-popup .footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 18px 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.params-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--line-cyan);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+
