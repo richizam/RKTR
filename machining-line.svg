@@ -144,3 +144,40 @@
     <use href="#icon-gantry-m" x="1359" y="117" width="70" height="88"/>
     <text class="rail-label" x="1394" y="109" text-anchor="middle">AREA GANTRY 2</text>
   </g>
+
+  <!-- INFEED BUFFER (conveyor) -->
+  <g id="infeed-buffer-machining" data-zone-id="Z-INFEED" data-zone-kind="conveyor" transform="translate(62 358)">
+    <rect class="label-box" x="0" y="0" width="60" height="60" rx="3"/>
+    <text class="station-label" x="30" y="24">INFEED</text>
+    <text class="station-label" x="30" y="42">BUFFER</text>
+    <line stroke="#4ade80" stroke-width="2.8" x1="60" y1="30" x2="76" y2="30" marker-end="url(#arrow-flow-m)" opacity="0.92"/>
+  </g>
+
+  <!-- STATION 01: OP05 Camera -->
+  <g id="station-mach-01" class="station status-running"
+     data-station-name="OP05 CAMERA STATION"
+     data-machine-id="RKTR-OP05-CAM-01"
+     data-zone-id="Z-OP05"
+     data-zone-kind="station"
+     data-controller="IPC/PLC"
+     transform="translate(154 248)">
+    <rect class="station-frame" x="0" y="0" width="180" height="124" rx="4"/>
+    <circle class="status-dot" cx="170" cy="10" r="6"/>
+    <text class="op-code" style="text-anchor:start" x="10" y="13">OP05</text>
+    <use href="#icon-camera-m" x="4" y="22" width="172" height="80"/>
+    <text class="ctrl-label" x="90" y="117">IPC/PLC</text>
+    <line class="monitor-link" x1="90" y1="124" x2="90" y2="154"/>
+    <circle class="status-dot" cx="90" cy="154" r="7"/>
+    <rect class="label-box" x="-8" y="168" width="196" height="52" rx="4"/>
+    <text class="station-label" x="90" y="188">CAMERA</text>
+    <text class="station-sublabel" x="90" y="206">WHEEL ID STATION</text>
+  </g>
+
+  <!-- STATION 02: VTL #1 -->
+  <g id="station-mach-02" class="station status-running"
+     data-station-name="OP10/20 VTL #1 — VDM 1600"
+     data-machine-id="RKTR-OP10-VTL-01"
+     data-zone-id="Z-VTL1"
+     data-zone-kind="station"
+     data-controller="Sinumerik One"
+     transform="translate(386 248)">
