@@ -206,3 +206,55 @@
   <g id="station-test-04" class="station status-running"
      data-station-name="OP70A ULTRASONIC TESTING"
      data-machine-id="RKTR-OP70-UT-01"
+     data-zone-id="Z-OP70A"
+     data-zone-kind="station"
+     data-controller="PC/PLC"
+     transform="translate(555 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP70A</text>
+    <image href="images/op70-ultrasonic.png" xlink:href="images/op70-ultrasonic.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PC/PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP70A</text>
+    <text class="station-label" x="60" y="154">ULTRASONIC</text>
+    <text class="station-label" x="60" y="167">TESTING A</text>
+  </g>
+
+  <!-- STATION 05: OP70B Ultrasonic -->
+  <g id="station-test-05" class="station status-running"
+     data-station-name="OP70B ULTRASONIC TESTING"
+     data-machine-id="RKTR-OP70-UT-02"
+     data-zone-id="Z-OP70B"
+     data-zone-kind="station"
+     data-controller="PC/PLC"
+     transform="translate(704 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP70B</text>
+    <image href="images/op70-ultrasonic.png" xlink:href="images/op70-ultrasonic.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PC/PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP70B</text>
+    <text class="station-label" x="60" y="154">ULTRASONIC</text>
+    <text class="station-label" x="60" y="167">TESTING B</text>
+  </g>
+
+  <!-- STATION 06: OP70C Ultrasonic -->
+  <g id="station-test-06" class="station status-running"
+     data-station-name="OP70C ULTRASONIC TESTING"
+     data-machine-id="RKTR-OP70-UT-03"
+     data-zone-id="Z-OP70C"
+     data-zone-kind="station"
+     data-controller="PC/PLC"
+     transform="translate(853 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP70C</text>
+    <image href="images/op70-ultrasonic.png" xlink:href="images/op70-ultrasonic.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PC/PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
