@@ -324,3 +324,35 @@ function registerZones(doc, lineName) {
       x: baseX + fx + fw / 2,
       y: baseY + fy + fh / 2,
       kind,
+      element: el,
+    };
+  });
+}
+
+function parseTranslate(transformAttr) {
+  if (!transformAttr) return [0, 0];
+  const m = /translate\(\s*(-?\d+(?:\.\d+)?)[ ,]+(-?\d+(?:\.\d+)?)\s*\)/.exec(transformAttr);
+  return m ? [parseFloat(m[1]), parseFloat(m[2])] : [0, 0];
+}
+
+/* Assign every zone an initial "last known wheel" by cycling through the
+ * WHEELS registry. Any popup click before the mock PLC has cycled to that
+ * zone still shows a real wheel record. The mock carry overwrites the entry
+ * on every arrival, so the value stays current as the line runs.          */
+function preSeedZones(lineName) {
+  const serials = Object.keys(WHEELS);
+  if (!serials.length) return;
+  const zoneIds = Object.keys(zoneRegistry[lineName]);
+  zoneIds.forEach((zId, i) => {
+    lastWheelAtZone[lineName][zId] = serials[i % serials.length];
+  });
+}
+
+
+/* -------------------- 4. Motion ------------------------------------------ */
+
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+/* One wheel sprite per gantry, so multiple gantries can carry wheels in
+ * parallel. Each sprite is hidden until its gantry starts a carry.       */
+function injectWheelSprite(svgRoot, lineName) {
