@@ -1,5 +1,13 @@
 # Changelog
 
+## Final build
+- Machine reference photos embedded in both SVGs (visual base).
+- Wheel drawer: identity + current location + Route list with timestamps.
+- Parked wheel sprites persist at stations and are clickable.
+- Process Parameters panel (`process-params.js`, 14 groups / 262 rows).
+- Traceability popup gained the Controller field.
+- README + demo screenshots.
+
 ## REV 0.5 — first reviewable prototype
 - Two-tab shell, dark CAD theme.
 - Machining + Testing schematics (real OP layout).
