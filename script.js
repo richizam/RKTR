@@ -291,3 +291,36 @@ async function loadOneSvg(mount) {
     const svg = document.importNode(parsed.documentElement, true);
     svg.setAttribute("id", lineName === "Machining line" ? "svg-mach" : "svg-test");
     mount.appendChild(svg);
+    svgRefs[lineName] = svg;
+    wireClicks(svg, lineName);
+    registerZones(svg, lineName);
+    preSeedZones(lineName);
+    injectWheelSprite(svg, lineName);
+    injectParkedWheelSprites(svg, lineName);
+    startMockPlc(lineName);
+  } catch (err) {
+    console.error("[init]", lineName, "load failed:", err);
+  }
+}
+
+/* -------------------- 3. Zones ------------------------------------------- */
+
+/* Pure attribute-based centroid computation. Doesn't depend on the SVG
+ * having a current viewport (getCTM/getBBox can return null until the
+ * inner document is fully laid out, which is unreliable inside <object>). */
+function registerZones(doc, lineName) {
+  const reg = zoneRegistry[lineName];
+  doc.querySelectorAll("[data-zone-id]").forEach((el) => {
+    const id = el.getAttribute("data-zone-id");
+    const kind = el.getAttribute("data-zone-kind") || "station";
+    const [baseX, baseY] = parseTranslate(el.getAttribute("transform"));
+    let frame = el.querySelector(".station-frame");
+    if (!frame) frame = el.querySelector("rect");
+    const fx = frame ? parseFloat(frame.getAttribute("x") || "0") : 0;
+    const fy = frame ? parseFloat(frame.getAttribute("y") || "0") : 0;
+    const fw = frame ? parseFloat(frame.getAttribute("width") || "0") : 0;
+    const fh = frame ? parseFloat(frame.getAttribute("height") || "0") : 0;
+    reg[id] = {
+      x: baseX + fx + fw / 2,
+      y: baseY + fy + fh / 2,
+      kind,
