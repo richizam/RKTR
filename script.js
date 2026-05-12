@@ -259,3 +259,35 @@ function initPopup() {
     backdrop.classList.remove("show");
     popup.classList.remove("show");
   };
+
+  backdrop.addEventListener("click", close);
+  closeButton.addEventListener("click", close);
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const pp = document.getElementById("param-panel");
+    if (pp && pp.classList.contains("show")) return; // param panel handles its own Esc first
+    close();
+  });
+}
+
+/* Inline each SVG into the main document via fetch + DOMParser. Avoids the
+ * cross-document fragility of <object> / contentDocument timing (which in
+ * some browsers fires load with an HTML placeholder doc, never updating). */
+async function initSvgObjects() {
+  const mounts = Array.from(document.querySelectorAll(".cad-mount"));
+  await Promise.all(mounts.map(loadOneSvg));
+}
+
+async function loadOneSvg(mount) {
+  const lineName = mount.dataset.line;
+  const url = mount.dataset.src;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const text = await response.text();
+    const parsed = new DOMParser().parseFromString(text, "image/svg+xml");
+    const parseErr = parsed.querySelector("parsererror");
+    if (parseErr) throw new Error("SVG parse error");
+    const svg = document.importNode(parsed.documentElement, true);
+    svg.setAttribute("id", lineName === "Machining line" ? "svg-mach" : "svg-test");
+    mount.appendChild(svg);
