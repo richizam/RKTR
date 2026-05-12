@@ -226,3 +226,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initTabs() {
+  const tabs = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".schematic-section");
+
+  const activate = (target) => {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.target === target;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", String(active));
+    });
+    sections.forEach((section) => {
+      const active = section.id === target;
+      section.classList.toggle("active", active);
+      section.hidden = !active;
+    });
+  };
+
+  tabs.forEach((button) => {
+    button.addEventListener("click", () => activate(button.dataset.target));
+  });
+
+  const hashTarget = window.location.hash.slice(1);
+  if (hashTarget && document.getElementById(hashTarget)) activate(hashTarget);
+}
+
+function initPopup() {
+  const backdrop = document.getElementById("popup-backdrop");
+  const popup = document.getElementById("trace-popup");
+  const closeButton = popup.querySelector(".close-btn");
+
+  const close = () => {
+    backdrop.classList.remove("show");
+    popup.classList.remove("show");
+  };
