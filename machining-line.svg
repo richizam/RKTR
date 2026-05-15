@@ -181,3 +181,39 @@
      data-zone-kind="station"
      data-controller="Sinumerik One"
      transform="translate(386 248)">
+    <rect class="station-frame" x="0" y="0" width="180" height="124" rx="4"/>
+    <circle class="status-dot" cx="170" cy="10" r="6"/>
+    <text class="op-code" style="text-anchor:start" x="10" y="13">OP10/20</text>
+    <!-- Image placeholder (replace href with images/op10-vtl.png once converted) -->
+    <image href="images/op10-vtl.png" xlink:href="images/op10-vtl.png" x="4" y="22" width="172" height="80" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="90" y="117">Sinumerik One</text>
+    <line class="monitor-link" x1="90" y1="124" x2="90" y2="154"/>
+    <circle class="status-dot" cx="90" cy="154" r="7"/>
+    <rect class="label-box" x="-8" y="168" width="196" height="52" rx="4"/>
+    <text class="station-label" x="90" y="188">VDM 1600  #1</text>
+    <text class="station-sublabel" x="90" y="206">OP10/20 · VTL</text>
+  </g>
+
+  <!-- STATION 03: VTL #2 -->
+  <g id="station-mach-03" class="station status-running"
+     data-station-name="OP10/20 VTL #2 — VDM 1600"
+     data-machine-id="RKTR-OP10-VTL-02"
+     data-zone-id="Z-VTL2"
+     data-zone-kind="station"
+     data-controller="Sinumerik One"
+     transform="translate(618 248)">
+    <rect class="station-frame" x="0" y="0" width="180" height="124" rx="4"/>
+    <circle class="status-dot" cx="170" cy="10" r="6"/>
+    <text class="op-code" style="text-anchor:start" x="10" y="13">OP10/20</text>
+    <image href="images/op10-vtl.png" xlink:href="images/op10-vtl.png" x="4" y="22" width="172" height="80" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="90" y="117">Sinumerik One</text>
+    <line class="monitor-link" x1="90" y1="124" x2="90" y2="154"/>
+    <circle class="status-dot" cx="90" cy="154" r="7"/>
+    <rect class="label-box" x="-8" y="168" width="196" height="52" rx="4"/>
+    <text class="station-label" x="90" y="188">VDM 1600  #2</text>
+    <text class="station-sublabel" x="90" y="206">OP10/20 · VTL</text>
+  </g>
+
+  <!-- STATION 04: VTL #3 -->
+  <g id="station-mach-04" class="station status-running"
+     data-station-name="OP10/20 VTL #3 — VDM 1600"
