@@ -70,3 +70,17 @@
       <div class="k">Dimensions</div><div class="v" id="p-dimensions"></div>
     </div>
 
+    <div class="footer">
+      <button type="button" class="params-link" id="open-params">Process parameters - View / Open</button>
+      <span class="hint">Sample wheel data lives in WHEELS in script.js; the mock PLC drives them through the line.</span>
+    </div>
+  </aside>
+
+  <aside id="wheel-drawer" class="wheel-drawer" role="dialog" aria-label="Wheel record" aria-modal="false">
+    <div class="head">
+      <div>
+        <div class="title"><span class="title-prefix">Wheel ·</span> <span id="wd-serial-head">—</span></div>
+        <div class="subtitle" id="wd-line">—</div>
+      </div>
+      <button class="close-btn" type="button" aria-label="Close" id="wd-close">x</button>
+    </div>
