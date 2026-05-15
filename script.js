@@ -421,3 +421,36 @@ function injectParkedWheelSprites(svgRoot, lineName) {
     layer.setAttribute("id", layerId);
     svgRoot.appendChild(layer);
   }
+  Object.keys(WHEELS).forEach((serial) => {
+    const id = parkedSpriteId(lineName, serial);
+    if (svgRoot.querySelector("#" + id)) return;
+    const sprite = ownerDoc.createElementNS(SVG_NS, "g");
+    sprite.setAttribute("id", id);
+    sprite.setAttribute("class", "wheel-sprite parked-wheel wheel-anchor");
+    sprite.setAttribute("data-serial", serial);
+    sprite.setAttribute("data-station-name", "WHEEL PARKED");
+    sprite.style.display = "none";
+    const use = ownerDoc.createElementNS(SVG_NS, "use");
+    use.setAttribute("href", "#" + symbolId);
+    use.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#" + symbolId);
+    use.setAttribute("width", "44");
+    use.setAttribute("height", "44");
+    use.setAttribute("x", "-22");
+    use.setAttribute("y", "-22");
+    sprite.appendChild(use);
+    layer.appendChild(sprite);
+  });
+}
+
+function getParkedSprite(lineName, serial) {
+  const root = svgRefs[lineName];
+  if (!root) return null;
+  return root.querySelector("#" + parkedSpriteId(lineName, serial));
+}
+
+function showParkedSpriteAt(lineName, serial, zoneId) {
+  const sprite = getParkedSprite(lineName, serial);
+  const zone = zoneRegistry[lineName] && zoneRegistry[lineName][zoneId];
+  if (!sprite || !zone) return;
+  sprite.style.transform = `translate(${zone.x}px, ${zone.y}px)`;
+  sprite.style.display = "";
