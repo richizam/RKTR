@@ -290,3 +290,40 @@ body {
   cursor: pointer;
 }
 
+.params-link:hover {
+  color: var(--line-cyan-hi);
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* ---- Process parameters panel (extra section) ---- */
+#param-backdrop {
+  z-index: 70;
+}
+
+.param-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 80;
+  display: none;
+  flex-direction: column;
+  width: min(940px, calc(100vw - 40px));
+  max-height: 84vh;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 1px solid var(--line-cyan);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  box-shadow: 0 0 24px rgba(58, 224, 255, 0.18), 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+
+.param-panel.show {
+  display: flex;
+}
+
+.param-panel .head {
+  display: flex;
