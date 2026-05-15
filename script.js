@@ -389,3 +389,35 @@ function injectWheelSprite(svgRoot, lineName) {
     layer.appendChild(sprite);
   }
 }
+
+function getWheelSprite(lineName, gantryIdx) {
+  const root = svgRefs[lineName];
+  if (!root) return null;
+  const layerId = lineName === "Machining line"
+    ? "wheel-sprite-layer-machining"
+    : "wheel-sprite-layer-testing";
+  return root.querySelector("#" + layerId + "-" + gantryIdx);
+}
+
+/* Per-wheel "parked" sprite. One per WHEEL per line, hidden until the
+ * wheel arrives at a station on this line. Stays visible while parked so
+ * the operator can click it to open the wheel drawer. Hidden again when
+ * the next gantry picks it up.                                            */
+function lineShortKey(lineName) {
+  return lineName === "Machining line" ? "m" : "t";
+}
+
+function parkedSpriteId(lineName, serial) {
+  return "parked-" + lineShortKey(lineName) + "-" + serial.replace(/[^A-Za-z0-9-]/g, "_");
+}
+
+function injectParkedWheelSprites(svgRoot, lineName) {
+  const ownerDoc = svgRoot.ownerDocument;
+  const symbolId = lineName === "Machining line" ? "icon-wheel-m" : "icon-wheel-t";
+  const layerId = "parked-wheel-layer-" + lineShortKey(lineName);
+  let layer = svgRoot.querySelector("#" + layerId);
+  if (!layer) {
+    layer = ownerDoc.createElementNS(SVG_NS, "g");
+    layer.setAttribute("id", layerId);
+    svgRoot.appendChild(layer);
+  }
