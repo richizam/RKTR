@@ -454,3 +454,35 @@ function showParkedSpriteAt(lineName, serial, zoneId) {
   if (!sprite || !zone) return;
   sprite.style.transform = `translate(${zone.x}px, ${zone.y}px)`;
   sprite.style.display = "";
+  const stationEl = zone.element;
+  const stationName = stationEl ? (stationEl.getAttribute("data-station-name") || "") : "";
+  sprite.setAttribute("data-station-name", stationName ? ("Wheel at " + stationName) : "Wheel parked");
+  sprite.setAttribute("data-current-zone", zoneId);
+}
+
+function hideParkedSprite(lineName, serial) {
+  const sprite = getParkedSprite(lineName, serial);
+  if (!sprite) return;
+  sprite.style.display = "none";
+  sprite.removeAttribute("data-current-zone");
+}
+
+function setSpriteAt(sprite, x, y) {
+  if (sprite) sprite.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function showSprite(sprite, serial) {
+  if (!sprite) return;
+  sprite.style.display = "";
+  sprite.setAttribute("data-serial", serial);
+}
+
+function hideSprite(sprite) {
+  if (!sprite) return;
+  sprite.style.display = "none";
+  sprite.removeAttribute("data-serial");
+}
+
+function clampTargetCenterX(lineName, centerX) {
+  const rail = GANTRIES[lineName].rail;
+  if (centerX < rail.min) return rail.min;
