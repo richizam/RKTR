@@ -551,3 +551,36 @@ async function pickAndCarry(lineName, serial, fromZoneId, toZoneId, opts) {
   setActiveStation(lineName, fromZoneId, false);
   setActiveStation(lineName, toZoneId, true);
 
+  setSpriteAt(sprite, fromZ.x, fromZ.y);
+  const destEl = zoneRegistry[lineName][toZoneId] && zoneRegistry[lineName][toZoneId].element;
+  const destLabel = (destEl && destEl.getAttribute("data-station-name")) || toZoneId;
+  if (sprite) sprite.setAttribute("data-station-name", "In transit → " + destLabel);
+  showSprite(sprite, serial);
+
+  /* Mark the wheel as in transit so the wheel drawer reflects it. */
+  if (WHEELS[serial]) {
+    WHEELS[serial].inTransit = true;
+    WHEELS[serial].transitTo = toZoneId;
+    WHEELS[serial].currentLine = lineName;
+  }
+
+  const carryDuration = REDUCED_MOTION ? 0 : 1200;
+  const toStr = `translate(${toZ.x}px, ${toZ.y}px)`;
+  const spriteAnim = sprite && sprite.animate(
+    [
+      { transform: `translate(${fromZ.x}px, ${fromZ.y}px)` },
+      { transform: toStr },
+    ],
+    { duration: carryDuration, easing: "ease-in-out", fill: "forwards" }
+  );
+  const gantryMove = moveGantry(lineName, gantryIdx, toZoneId, { duration: carryDuration });
+
+  await Promise.all([
+    spriteAnim ? spriteAnim.finished : Promise.resolve(),
+    gantryMove,
+  ]);
+
+  if (sprite) sprite.style.transform = toStr;
+  if (spriteAnim) { try { spriteAnim.cancel(); } catch (_err) { /* already cancelled */ } }
+
+  /* 3) Drop dwell, optional shuttle bounce, hide transit sprite,
