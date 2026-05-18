@@ -519,3 +519,35 @@ async function moveGantry(lineName, gantryIdx, toZoneId, opts) {
   const clampedCenter = clampTargetCenterX(lineName, zone.x);
   const targetTx = clampedCenter - head.baseCenterX;
   const duration = (opts && opts.duration) || 1400;
+  await animateTranslate(gantryEl, head.currentX, targetTx, duration);
+  head.currentX = targetTx;
+}
+
+async function pickAndCarry(lineName, serial, fromZoneId, toZoneId, opts) {
+  const gantryIdx = (opts && opts.gantryIdx) || 0;
+  const fromZ = zoneRegistry[lineName][fromZoneId];
+  const toZ = zoneRegistry[lineName][toZoneId];
+  if (!fromZ || !toZ) return;
+
+  const sprite = getWheelSprite(lineName, gantryIdx);
+
+  /* Cycle-restart: when the mock PLC loops a wheel back to the line's
+   * first zone, reset its route history for this line so the drawer
+   * shows a fresh journey, not the cumulative ladder.                 */
+  const firstZone = ROUTE_ZONES[lineName] && ROUTE_ZONES[lineName][0];
+  if (firstZone && fromZoneId === firstZone.zoneId && WHEELS[serial]
+      && WHEELS[serial].route.some((r) => r.line === lineName)) {
+    WHEELS[serial].route = WHEELS[serial].route.filter((r) => r.line !== lineName);
+  }
+
+  /* 1) Highlight pickup station; gantry moves to it empty.
+   *    Hide the parked sprite at the source — the wheel is leaving.   */
+  hideParkedSprite(lineName, serial);
+  setActiveStation(lineName, fromZoneId, true);
+  await moveGantry(lineName, gantryIdx, fromZoneId, { duration: 800 });
+  await sleep(REDUCED_MOTION ? 0 : 280);
+
+  /* 2) Switch highlight to destination, reveal the transit sprite at the pickup. */
+  setActiveStation(lineName, fromZoneId, false);
+  setActiveStation(lineName, toZoneId, true);
+
