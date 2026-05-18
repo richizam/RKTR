@@ -486,3 +486,36 @@ function hideSprite(sprite) {
 function clampTargetCenterX(lineName, centerX) {
   const rail = GANTRIES[lineName].rail;
   if (centerX < rail.min) return rail.min;
+  if (centerX > rail.max) return rail.max;
+  return centerX;
+}
+
+function animateTranslate(el, fromX, toX, duration) {
+  const dur = REDUCED_MOTION ? 0 : duration;
+  const toStr = `translate(${toX}px, 0px)`;
+  const anim = el.animate(
+    [
+      { transform: `translate(${fromX}px, 0px)` },
+      { transform: toStr },
+    ],
+    { duration: dur, easing: "ease-in-out", fill: "forwards" }
+  );
+  return anim.finished.then(() => {
+    /* Commit final value to inline style and cancel the animation so its
+     * fill: forwards stops over-applying once the next move begins. */
+    el.style.transform = toStr;
+    try { anim.cancel(); } catch (_err) { /* already cancelled */ }
+  });
+}
+
+async function moveGantry(lineName, gantryIdx, toZoneId, opts) {
+  const cfg = GANTRIES[lineName];
+  const root = svgRefs[lineName];
+  const head = cfg && cfg.heads[gantryIdx];
+  if (!root || !head) return;
+  const gantryEl = root.querySelector(head.selector);
+  const zone = zoneRegistry[lineName][toZoneId];
+  if (!gantryEl || !zone) return;
+  const clampedCenter = clampTargetCenterX(lineName, zone.x);
+  const targetTx = clampedCenter - head.baseCenterX;
+  const duration = (opts && opts.duration) || 1400;
