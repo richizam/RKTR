@@ -407,3 +407,139 @@ const PROCESS_PARAMS = {
       },
       {
         "n": "7",
+        "tag": "NC alarm details",
+        "bytes": "10 byte",
+        "source": "Machine - SPECHT800",
+        "example": "NC252478"
+      },
+      {
+        "n": "8",
+        "tag": "Chuck Clamping clamping pressure in bar",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "75"
+      },
+      {
+        "n": "9",
+        "tag": "Hydaulic System pressure in bar",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "120"
+      },
+      {
+        "n": "10",
+        "tag": "Pnumatic pressure in Bar",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "5"
+      },
+      {
+        "n": "11",
+        "tag": "Coolant pressure in Bar",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "10"
+      },
+      {
+        "n": "12",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "250"
+      },
+      {
+        "n": "13",
+        "tag": "Part Count",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "2 bytes → 65,536 values"
+      },
+      {
+        "n": "14",
+        "tag": "Spindle motor temp",
+        "bytes": "4byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "15",
+        "tag": "X1 motor Temp",
+        "bytes": "4byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "16",
+        "tag": "X2 Motor Temp",
+        "bytes": "4byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "17",
+        "tag": "Y1 motor Temp",
+        "bytes": "4byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "18",
+        "tag": "Y2 Motor Temp",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "19",
+        "tag": "Z1 motor Temp",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "20",
+        "tag": "Z2 Motor temp",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "21",
+        "tag": "B1 Motor temp",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "65.C"
+      },
+      {
+        "n": "22",
+        "tag": "Tool Life Pre-warning",
+        "bytes": "10Byte",
+        "source": "Machine - SPECHT800",
+        "example": "tool number"
+      },
+      {
+        "n": "23",
+        "tag": "Tool Life Alarm",
+        "bytes": "10Byte",
+        "source": "Machine - SPECHT800",
+        "example": "tool number"
+      },
+      {
+        "n": "24",
+        "tag": "Tool Breakage",
+        "bytes": "1byte",
+        "source": "Machine - SPECHT800",
+        "example": "if yes=1, no=0"
+      },
+      {
+        "n": "25",
+        "tag": "Probe Data 1:  Bore to OD Runout",
+        "bytes": "8 byte",
+        "source": "Machine - SPECHT800",
+        "example": "1000.011"
+      },
+      {
+        "n": "26",
+        "tag": "Probing Data-2 :Bore diameter",
+        "bytes": "8 byte",
+        "source": "Machine - SPECHT800",
