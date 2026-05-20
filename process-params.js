@@ -271,3 +271,139 @@ const PROCESS_PARAMS = {
         "n": "27",
         "tag": "Probing Data-3 : web thickness",
         "bytes": "8 byte",
+        "source": "Machine - VDM1600",
+        "example": "1000.011"
+      },
+      {
+        "n": "28",
+        "tag": "Probing Data-4 : Spare 1",
+        "bytes": "8 byte",
+        "source": "Machine - VDM1600",
+        "example": "1000.011"
+      },
+      {
+        "n": "29",
+        "tag": "Probing Data-5 : Spare 2",
+        "bytes": "8 byte",
+        "source": "Machine - VDM1600",
+        "example": "1000.011"
+      },
+      {
+        "n": "30",
+        "tag": "Probing Data-6 : Spare 3",
+        "bytes": "8 byte",
+        "source": "Machine - VDM1600",
+        "example": "1000.011"
+      },
+      {
+        "n": "31",
+        "tag": "End Cycle",
+        "bytes": "1byte",
+        "source": "Machine - VDM1600",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "32",
+        "tag": "Seat checking confirmation for OP20- Airgap to be measured is > 0,05 mm. The measure must be realized on a \nsurface which feature is at least < Rz 25",
+        "bytes": "1byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      },
+      {
+        "n": "33",
+        "tag": "Spindle RPM",
+        "bytes": "1byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      },
+      {
+        "n": "34",
+        "tag": "Spindle chiller temperature",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      },
+      {
+        "n": "35",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      },
+      {
+        "n": "36",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      },
+      {
+        "n": "37",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      },
+      {
+        "n": "38",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      },
+      {
+        "n": "39",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": ""
+      }
+    ]
+  },
+  "OP30": {
+    "equipment": "OP30 HMC, SPECHT 800",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Spindle load %",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "Maximum 200%"
+      },
+      {
+        "n": "2",
+        "tag": "Feed override  %",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "Feed Over irde 120%"
+      },
+      {
+        "n": "3",
+        "tag": "Cycle Time Monitoring: Track cycle time against preset limits for efficiency.",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": "in second"
+      },
+      {
+        "n": "4",
+        "tag": "Lubrication System Status",
+        "bytes": "1byte",
+        "source": "Machine - SPECHT800",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "5",
+        "tag": "Program Number",
+        "bytes": "10 byte",
+        "source": "Machine - SPECHT800",
+        "example": "Wheel_101"
+      },
+      {
+        "n": "6",
+        "tag": "PLC alarm details",
+        "bytes": "10 byte",
+        "source": "Machine - SPECHT800",
+        "example": "750101"
+      },
+      {
+        "n": "7",
