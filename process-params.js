@@ -135,3 +135,139 @@ const PROCESS_PARAMS = {
         "example": "NC252478"
       },
       {
+        "n": "8",
+        "tag": "Chuck Clamping clamping pressure in bar",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": "75"
+      },
+      {
+        "n": "9",
+        "tag": "Hydaulic System pressure in bar",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": "120"
+      },
+      {
+        "n": "10",
+        "tag": "Pnumatic pressure in Bar",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": "5"
+      },
+      {
+        "n": "11",
+        "tag": "Coolant pressure in Bar",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": "10"
+      },
+      {
+        "n": "12",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": "250"
+      },
+      {
+        "n": "13",
+        "tag": "Part Count",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": "2 bytes → 65,536 values"
+      },
+      {
+        "n": "14",
+        "tag": "Spindle motor temp",
+        "bytes": "4byte",
+        "source": "Machine - VDM1600",
+        "example": "65.C"
+      },
+      {
+        "n": "15",
+        "tag": "X1 motor Temp",
+        "bytes": "4byte",
+        "source": "Machine - VDM1600",
+        "example": "65.C"
+      },
+      {
+        "n": "16",
+        "tag": "Z1 motor Temp",
+        "bytes": "4byte",
+        "source": "Machine - VDM1600",
+        "example": "65.C"
+      },
+      {
+        "n": "17",
+        "tag": "X2 Motor Temp",
+        "bytes": "4byte",
+        "source": "Machine - VDM1600",
+        "example": "65.C"
+      },
+      {
+        "n": "18",
+        "tag": "Z2 Motor temp",
+        "bytes": "2byte",
+        "source": "Machine - VDM1600",
+        "example": "65.C"
+      },
+      {
+        "n": "19",
+        "tag": "Tool Life Pre-warning - Left Magazine",
+        "bytes": "10Byte",
+        "source": "Machine - VDM1600",
+        "example": "tool number"
+      },
+      {
+        "n": "20",
+        "tag": "Tool Life Alarm Left Magazine",
+        "bytes": "10Byte",
+        "source": "Machine - VDM1600",
+        "example": "tool number"
+      },
+      {
+        "n": "21",
+        "tag": "Tool Life Pre-warning - right Magazine",
+        "bytes": "10Byte",
+        "source": "Machine - VDM1600",
+        "example": "tool number"
+      },
+      {
+        "n": "22",
+        "tag": "Tool Life Alarm right Magazine",
+        "bytes": "10Byte",
+        "source": "Machine - VDM1600",
+        "example": "tool number"
+      },
+      {
+        "n": "23",
+        "tag": "Tool Breakage left Magazine",
+        "bytes": "1byte",
+        "source": "Machine - VDM1600",
+        "example": "if yes=1, no=0"
+      },
+      {
+        "n": "24",
+        "tag": "Tool Breakage Right Magazine",
+        "bytes": "1byte",
+        "source": "Machine - VDM1600",
+        "example": "if yes=1, no=0"
+      },
+      {
+        "n": "25",
+        "tag": "Probe Data 1:  Bore to OD Runout",
+        "bytes": "8 byte",
+        "source": "Machine - VDM1600",
+        "example": "1000.011"
+      },
+      {
+        "n": "26",
+        "tag": "Probing Data-2 :Bore diameter",
+        "bytes": "8 byte",
+        "source": "Machine - VDM1600",
+        "example": "1000.011"
+      },
+      {
+        "n": "27",
+        "tag": "Probing Data-3 : web thickness",
+        "bytes": "8 byte",
