@@ -584,3 +584,35 @@ async function pickAndCarry(lineName, serial, fromZoneId, toZoneId, opts) {
   if (spriteAnim) { try { spriteAnim.cancel(); } catch (_err) { /* already cancelled */ } }
 
   /* 3) Drop dwell, optional shuttle bounce, hide transit sprite,
+   *    reveal parked sprite at destination, clear highlight.            */
+  maybeShuttleAnimate(lineName, toZoneId);
+  await sleep(REDUCED_MOTION ? 0 : 380);
+  hideSprite(sprite);
+  showParkedSpriteAt(lineName, serial, toZoneId);
+  setActiveStation(lineName, toZoneId, false);
+
+  /* 4) Update wheel + zone occupancy state and append a route entry. */
+  if (WHEELS[serial]) {
+    WHEELS[serial].currentZone = toZoneId;
+    WHEELS[serial].currentLine = lineName;
+    WHEELS[serial].inTransit = false;
+    WHEELS[serial].transitTo = null;
+    const zoneDef = findRouteZone(lineName, toZoneId);
+    WHEELS[serial].route.push({
+      line: lineName,
+      zoneId: toZoneId,
+      ts: formatNowHMS(),
+      op: zoneDef ? zoneDef.op : "",
+      code: zoneDef ? zoneDef.code : toZoneId,
+    });
+  }
+  Object.keys(zoneOccupancy[lineName]).forEach((zId) => {
+    if (zoneOccupancy[lineName][zId] === serial) zoneOccupancy[lineName][zId] = null;
+  });
+  zoneOccupancy[lineName][toZoneId] = serial;
+  lastWheelAtZone[lineName][toZoneId] = serial;
+
+  /* If the drawer is showing this wheel, refresh it live. */
+  if (currentDrawerSerial === serial) populateWheelDrawer(serial);
+
+  /* 5) Return gantry to home so it can start the next wheel. */
