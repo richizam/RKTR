@@ -616,3 +616,36 @@ async function pickAndCarry(lineName, serial, fromZoneId, toZoneId, opts) {
   if (currentDrawerSerial === serial) populateWheelDrawer(serial);
 
   /* 5) Return gantry to home so it can start the next wheel. */
+  await moveGantryHome(lineName, gantryIdx);
+}
+
+async function moveGantryHome(lineName, gantryIdx) {
+  const head = GANTRIES[lineName].heads[gantryIdx];
+  const root = svgRefs[lineName];
+  if (!head || !root || head.currentX === 0) return;
+  const gantryEl = root.querySelector(head.selector);
+  if (!gantryEl) return;
+  await animateTranslate(gantryEl, head.currentX, 0, 700);
+  head.currentX = 0;
+}
+
+/* Highlights a station while a wheel is moving to it: applies a CSS class
+ * for the glow + a slight SVG-attribute scale so the box visibly pops.   */
+function setActiveStation(lineName, zoneId, active) {
+  const zone = zoneRegistry[lineName] && zoneRegistry[lineName][zoneId];
+  if (!zone || !zone.element) return;
+  const el = zone.element;
+  if (active) {
+    if (!el.hasAttribute("data-base-transform")) {
+      el.setAttribute("data-base-transform", el.getAttribute("transform") || "");
+    }
+    const baseTx = el.getAttribute("data-base-transform");
+    const frame = el.querySelector(".station-frame") || el.querySelector("rect");
+    if (frame) {
+      const fx = parseFloat(frame.getAttribute("x") || "0");
+      const fy = parseFloat(frame.getAttribute("y") || "0");
+      const fw = parseFloat(frame.getAttribute("width") || "0");
+      const fh = parseFloat(frame.getAttribute("height") || "0");
+      const cx = fx + fw / 2;
+      const cy = fy + fh / 2;
+      el.setAttribute("transform",
