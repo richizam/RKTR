@@ -681,3 +681,36 @@ function maybeShuttleAnimate(lineName, toZoneId) {
 }
 
 function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/* -------------------- 5. Mock PLC ---------------------------------------- */
+
+/* Events for the same gantry queue up; events for different gantries run
+ * in parallel. So as soon as wheel #1 hands off (e.g. from g0 to g1),
+ * wheel #2 can immediately enter g0. Matches how the real PLC + plant
+ * operates with independent manipulators per zone.                      */
+const gantryQueues = {};
+
+async function acceptPlcEvent({ line, serial, fromZone, toZone, gantry }) {
+  const key = line + ":" + gantry;
+  const prev = gantryQueues[key] || Promise.resolve();
+  const next = prev.catch(() => {}).then(() =>
+    pickAndCarry(line, serial, fromZone, toZone, { gantryIdx: gantry })
+  );
+  gantryQueues[key] = next;
+  return next;
+}
+
+async function startMockPlc(lineName) {
+  if (plcRunning[lineName]) return;
+  plcRunning[lineName] = true;
+  const journey = JOURNEYS[lineName];
+  if (!journey || !journey.length) return;
+
+  /* Split the flat journey list into per-serial sub-journeys + status events. */
+  const eventsBySerial = {};
+  const serialOrder = [];
+  const statusEvents = [];
+  for (const evt of journey) {
+    if (evt.kind === "status") { statusEvents.push(evt); continue; }
