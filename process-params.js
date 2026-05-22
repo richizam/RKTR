@@ -543,3 +543,140 @@ const PROCESS_PARAMS = {
         "tag": "Probing Data-2 :Bore diameter",
         "bytes": "8 byte",
         "source": "Machine - SPECHT800",
+        "example": "1000.011"
+      },
+      {
+        "n": "27",
+        "tag": "Probing Data-3 : web thickness",
+        "bytes": "8 byte",
+        "source": "Machine - SPECHT800",
+        "example": "1000.011"
+      },
+      {
+        "n": "28",
+        "tag": "Probing Data-4 : Spare 1",
+        "bytes": "8 byte",
+        "source": "Machine - SPECHT800",
+        "example": "1000.011"
+      },
+      {
+        "n": "29",
+        "tag": "Probing Data-5 : Spare 2",
+        "bytes": "8 byte",
+        "source": "Machine - SPECHT800",
+        "example": "1000.011"
+      },
+      {
+        "n": "30",
+        "tag": "Probing Data-6 : Spare 3",
+        "bytes": "8 byte",
+        "source": "Machine - SPECHT800",
+        "example": "1000.011"
+      },
+      {
+        "n": "31",
+        "tag": "End Cycle",
+        "bytes": "1byte",
+        "source": "Machine - SPECHT800",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "32",
+        "tag": "Pallet confirmation for Opeartion",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      },
+      {
+        "n": "33",
+        "tag": "Pallet seating confirmation",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      },
+      {
+        "n": "34",
+        "tag": "Air seat checking confirmation",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      },
+      {
+        "n": "35",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      },
+      {
+        "n": "36",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      },
+      {
+        "n": "37",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      },
+      {
+        "n": "38",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      },
+      {
+        "n": "39",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Machine - SPECHT800",
+        "example": ""
+      }
+    ]
+  },
+  "OP40": {
+    "equipment": "OP40 Hofmann Balancing station",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Machine Calibration Logs: Track calibration status and frequency, ensuring the machine is consistently accurate.",
+        "bytes": "1 byte",
+        "source": "Hofmann",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "2",
+        "tag": "Cycle Time Monitoring: Track cycle time against preset limits for efficiency.",
+        "bytes": "4 byte",
+        "source": "Hofmann",
+        "example": "250 sec"
+      },
+      {
+        "n": "3",
+        "tag": "Program Number",
+        "bytes": "10 byte",
+        "source": "Hofmann",
+        "example": "Wheel_101"
+      },
+      {
+        "n": "4",
+        "tag": "PLC Alarm  Details",
+        "bytes": "10 byte",
+        "source": "Hofmann",
+        "example": "750101"
+      },
+      {
+        "n": "5",
+        "tag": "NC Alarm Details",
+        "bytes": "10 byte",
+        "source": "Hofmann",
+        "example": "NC252478"
+      },
+      {
+        "n": "6",
+        "tag": "Chuck Clamping actual pressure",
+        "bytes": "2 byte",
