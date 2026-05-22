@@ -952,3 +952,139 @@ const PROCESS_PARAMS = {
         "source": "Measuring station",
         "example": ""
       },
+      {
+        "n": "5",
+        "tag": "Hub Thickness",
+        "bytes": "4 byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "6",
+        "tag": "Web Thickness",
+        "bytes": "4 byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "7",
+        "tag": "Room temperature",
+        "bytes": "4 byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "8",
+        "tag": "Wheel Runout OD",
+        "bytes": "4 byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "9",
+        "tag": "Wheel OD to ID concensity",
+        "bytes": "4 byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "10",
+        "tag": "Bore tapper & ovalaity",
+        "bytes": "4 byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "11",
+        "tag": "End Cycle",
+        "bytes": "4 byte",
+        "source": "Measuring station",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "11",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "11",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "11",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "11",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Measuring station",
+        "example": ""
+      },
+      {
+        "n": "11",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Measuring station",
+        "example": ""
+      }
+    ]
+  },
+  "OP70": {
+    "equipment": "OP70 Ultrasonic testing -1",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Calbriation Block :",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": "Wheel Model 1: 101\nWheel Model 2: 102"
+      },
+      {
+        "n": "2",
+        "tag": "Calbriation Probe Frequency in MHz",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": "150"
+      },
+      {
+        "n": "3",
+        "tag": "Calbriation Probe Angle",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": "45"
+      },
+      {
+        "n": "4",
+        "tag": "Calbriation Sensitivity Level in Db",
+        "bytes": "4 byte",
+        "source": "RosenXt UT machine",
+        "example": "?"
+      },
+      {
+        "n": "5",
+        "tag": "Couplant Used",
+        "bytes": "4 byte",
+        "source": "RosenXt UT machine",
+        "example": "?"
+      },
+      {
+        "n": "6",
+        "tag": "Sensitivity Level",
+        "bytes": "4 byte",
+        "source": "RosenXt UT machine",
+        "example": "?"
+      },
+      {
+        "n": "7",
+        "tag": "Reference Db",
+        "bytes": "4 byte",
+        "source": "RosenXt UT machine",
