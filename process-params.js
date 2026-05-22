@@ -680,3 +680,139 @@ const PROCESS_PARAMS = {
         "n": "6",
         "tag": "Chuck Clamping actual pressure",
         "bytes": "2 byte",
+        "source": "Hofmann",
+        "example": "120 bar"
+      },
+      {
+        "n": "7",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "45 sec"
+      },
+      {
+        "n": "8",
+        "tag": "Tolerance",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "125 gm"
+      },
+      {
+        "n": "9",
+        "tag": "Balancing Status: Track the balance status - Balance Tolerance/ Grade",
+        "bytes": "4 byte",
+        "source": "Hofmann",
+        "example": "FL,FR,RL,RR, E1/E2/E3"
+      },
+      {
+        "n": "10",
+        "tag": "Correction Weight Applied: Record the amount and location of the corrective weight applied to the part.",
+        "bytes": "2byte",
+        "source": "Hofmann",
+        "example": "10"
+      },
+      {
+        "n": "11",
+        "tag": "Iniitial Unbalance : Speed",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "400"
+      },
+      {
+        "n": "12",
+        "tag": "Iniitial Unbalance : Status",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": ""
+      },
+      {
+        "n": "13",
+        "tag": "Iniitial Unbalance : Stock",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "13.11gm/0.00."
+      },
+      {
+        "n": "14",
+        "tag": "Residual Unbalance : Speed",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "400"
+      },
+      {
+        "n": "15",
+        "tag": "Residual Unbalance : Status",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": ""
+      },
+      {
+        "n": "16",
+        "tag": "Residual Unbalance : Stock",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "13.11gm/0.00."
+      },
+      {
+        "n": "17",
+        "tag": "Wheel Status",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "18",
+        "tag": "End Cycle",
+        "bytes": "8 byte",
+        "source": "Hofmann",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "19",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Hofmann",
+        "example": ""
+      },
+      {
+        "n": "20",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Hofmann",
+        "example": ""
+      },
+      {
+        "n": "21",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Hofmann",
+        "example": ""
+      },
+      {
+        "n": "22",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Hofmann",
+        "example": ""
+      },
+      {
+        "n": "23",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Hofmann",
+        "example": ""
+      }
+    ]
+  },
+  "OP50": {
+    "equipment": "OP50 Washing station",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Water Temperature",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": "25.C"
+      },
+      {
+        "n": "2",
