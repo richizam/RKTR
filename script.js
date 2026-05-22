@@ -649,3 +649,35 @@ function setActiveStation(lineName, zoneId, active) {
       const cx = fx + fw / 2;
       const cy = fy + fh / 2;
       el.setAttribute("transform",
+        baseTx + " translate(" + cx + " " + cy + ") scale(1.06) translate(" + (-cx) + " " + (-cy) + ")");
+    }
+    el.classList.add("station-active");
+  } else {
+    el.classList.remove("station-active");
+    const base = el.getAttribute("data-base-transform");
+    if (base !== null) el.setAttribute("transform", base);
+  }
+}
+
+/* Local lateral bounce when a wheel arrives at a shuttle station (NG /
+ * SPC on the Testing line). Animates only the inner .shuttle-body so the
+ * outer group's transform — which the zone registry depends on, and which
+ * setActiveStation mutates for the highlight scale — stays untouched.    */
+function maybeShuttleAnimate(lineName, toZoneId) {
+  const zone = zoneRegistry[lineName] && zoneRegistry[lineName][toZoneId];
+  if (!zone || !zone.element) return;
+  if (!zone.element.hasAttribute("data-shuttle")) return;
+  const body = zone.element.querySelector(".shuttle-body");
+  if (!body) return;
+  const dur = REDUCED_MOTION ? 0 : 1100;
+  body.animate(
+    [
+      { transform: "translate(0px, 0px)" },
+      { transform: "translate(0px, 30px)" },
+      { transform: "translate(0px, 0px)" },
+    ],
+    { duration: dur, easing: "ease-in-out" }
+  );
+}
+
+function sleep(ms) {
