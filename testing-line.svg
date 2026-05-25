@@ -258,3 +258,55 @@
     <image href="images/op70-ultrasonic.png" xlink:href="images/op70-ultrasonic.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
     <text class="ctrl-label" x="60" y="86">PC/PLC</text>
     <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP70C</text>
+    <text class="station-label" x="60" y="154">ULTRASONIC</text>
+    <text class="station-label" x="60" y="167">TESTING C</text>
+  </g>
+
+  <!-- STATION 07: OP80 Dot Matrix Marking -->
+  <g id="station-test-07" class="station status-running"
+     data-station-name="OP80 DOT MATRIX MARKING"
+     data-machine-id="RKTR-OP80-MRK-01"
+     data-zone-id="Z-OP80"
+     data-zone-kind="station"
+     data-controller="PLC"
+     transform="translate(1002 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP80</text>
+    <image href="images/op80-marking.png" xlink:href="images/op80-marking.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP80</text>
+    <text class="station-label" x="60" y="154">DOT MATRIX</text>
+    <text class="station-label" x="60" y="167">MARKING</text>
+  </g>
+
+  <!-- STATION 08: OP90 Magnetic Particle Inspection -->
+  <g id="station-test-08" class="station status-running"
+     data-station-name="OP90 MAGNETIC PARTICLE INSPECTION"
+     data-machine-id="RKTR-OP90-MPT-01"
+     data-zone-id="Z-OP90"
+     data-zone-kind="station"
+     data-controller="PLC"
+     transform="translate(1151 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP90</text>
+    <image href="images/op90-mpt.png" xlink:href="images/op90-mpt.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP90</text>
+    <text class="station-label" x="60" y="154">MAGNETIC</text>
+    <text class="station-label" x="60" y="167">PARTICLE INSP.</text>
+  </g>
+
+  <!-- STATION 09: OP100 Washing -->
+  <g id="station-test-09" class="station status-running"
+     data-station-name="OP100 WASHING STATION"
