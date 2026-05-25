@@ -1088,3 +1088,139 @@ const PROCESS_PARAMS = {
         "tag": "Reference Db",
         "bytes": "4 byte",
         "source": "RosenXt UT machine",
+        "example": ""
+      },
+      {
+        "n": "8",
+        "tag": "Scanning Method",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": "if Automated = 1 / Manual = 0"
+      },
+      {
+        "n": "9",
+        "tag": "Coverage Area",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": "if All= 1, Rim= 2, Rim & Flang = 3, Rim & Hub = 4"
+      },
+      {
+        "n": "10",
+        "tag": "Scanning Speed",
+        "bytes": "4 byte",
+        "source": "RosenXt UT machine",
+        "example": "450"
+      },
+      {
+        "n": "11",
+        "tag": "Number of Probes Used",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": "?"
+      },
+      {
+        "n": "12",
+        "tag": "Probe Frequency in MHz",
+        "bytes": "4 byte",
+        "source": "RosenXt UT machine",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "13",
+        "tag": "Rim testing",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "14",
+        "tag": "Hub testing",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "15",
+        "tag": "Web Testing",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "16",
+        "tag": "Bore Testing",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "17",
+        "tag": "Reference Standard & Accepatance cretira",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": ""
+      },
+      {
+        "n": "18",
+        "tag": "End Cycle",
+        "bytes": "1byte",
+        "source": "RosenXt UT machine",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "19",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": ""
+      },
+      {
+        "n": "20",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": ""
+      },
+      {
+        "n": "21",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": ""
+      },
+      {
+        "n": "22",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": ""
+      },
+      {
+        "n": "23",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "RosenXt UT machine",
+        "example": ""
+      }
+    ]
+  },
+  "OP80": {
+    "equipment": "OP80 Dot matrix marking",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Dot Matrix code",
+        "bytes": "30 byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": "RKT 02/24 ABC012 ER8 00001"
+      },
+      {
+        "n": "2",
+        "tag": "Marking Results (Coordinates): Number of Parts ok / Not ok",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "3",
+        "tag": "Marking head Servo motor load in %",
