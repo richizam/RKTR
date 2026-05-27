@@ -1361,3 +1361,139 @@ const PROCESS_PARAMS = {
       },
       {
         "n": "8",
+        "tag": "Lower coil Read out [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "11472Ats"
+      },
+      {
+        "n": "9",
+        "tag": "Lower coil - DeMagnetization Preset [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "12500Ats"
+      },
+      {
+        "n": "10",
+        "tag": "Upper coil - Magnetization Preset [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "11500Ats"
+      },
+      {
+        "n": "11",
+        "tag": "Upper coil Read out [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "11411Ats"
+      },
+      {
+        "n": "12",
+        "tag": "Upper coil - DeMagnetization Preset [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "12500Ats"
+      },
+      {
+        "n": "13",
+        "tag": "Yoke coil - Magnetization Preset [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "11000Ats"
+      },
+      {
+        "n": "14",
+        "tag": "Yoke coil Read out [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "11039Ats"
+      },
+      {
+        "n": "15",
+        "tag": "Yoke coil - DeMagnetization Preset [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "12000Ats"
+      },
+      {
+        "n": "16",
+        "tag": "DeMagnetization Performed",
+        "bytes": "1byte",
+        "source": "CGM MPI Station",
+        "example": "if Yes=1, No=0"
+      },
+      {
+        "n": "17",
+        "tag": "DeMagnetization  gauss Level",
+        "bytes": "1byte",
+        "source": "CGM MPI Station",
+        "example": ""
+      },
+      {
+        "n": "18",
+        "tag": "Acceptance creitria  with refernnce standrad",
+        "bytes": "1byte",
+        "source": "CGM MPI Station",
+        "example": ""
+      },
+      {
+        "n": "19",
+        "tag": "Inspection Result",
+        "bytes": "1byte",
+        "source": "CGM MPI Station",
+        "example": "if 1=Wheel Accepted, 0=Wheel not ok"
+      },
+      {
+        "n": "20",
+        "tag": "END CYCLE",
+        "bytes": "1byte",
+        "source": "CGM MPI Station",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "21",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": ""
+      },
+      {
+        "n": "22",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": ""
+      },
+      {
+        "n": "23",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": ""
+      },
+      {
+        "n": "24",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": ""
+      },
+      {
+        "n": "25",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": ""
+      }
+    ]
+  },
+  "OP100": {
+    "equipment": "OP100 Washing station",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Water Temperature",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": "25.C"
+      },
