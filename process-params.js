@@ -1224,3 +1224,140 @@ const PROCESS_PARAMS = {
       {
         "n": "3",
         "tag": "Marking head Servo motor load in %",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": "120"
+      },
+      {
+        "n": "4",
+        "tag": "Torque Alarm",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "5",
+        "tag": "Marking Head Alarm",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "6",
+        "tag": "Program Number",
+        "bytes": "10Byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      },
+      {
+        "n": "7",
+        "tag": "NC Alarm Code",
+        "bytes": "10Byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      },
+      {
+        "n": "8",
+        "tag": "PLC Alarm details",
+        "bytes": "10Byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      },
+      {
+        "n": "9",
+        "tag": "End Cycle",
+        "bytes": "1byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "10",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      },
+      {
+        "n": "11",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      },
+      {
+        "n": "12",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      },
+      {
+        "n": "13",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      },
+      {
+        "n": "14",
+        "tag": "Spare",
+        "bytes": "2byte",
+        "source": "Gantry IPC / Floor Auromation",
+        "example": ""
+      }
+    ]
+  },
+  "OP90": {
+    "equipment": "OP90 Magnetic particle inspection -01",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Hub Internal Diameter",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": "184"
+      },
+      {
+        "n": "2",
+        "tag": "Hub Thickness",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": "190"
+      },
+      {
+        "n": "3",
+        "tag": "Rim Thickness",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": "131"
+      },
+      {
+        "n": "4",
+        "tag": "Rolling Diameter",
+        "bytes": "2byte",
+        "source": "CGM MPI Station",
+        "example": "918"
+      },
+      {
+        "n": "5",
+        "tag": "General note  (From CGM Machine)",
+        "bytes": "1byte",
+        "source": "CGM MPI Station",
+        "example": "1=Good \n2=Crack\n3=\n4="
+      },
+      {
+        "n": "6",
+        "tag": "Inspection Cycle type",
+        "bytes": "1byte",
+        "source": "CGM MPI Station",
+        "example": "1= Lateral+Rolling\n2=\n3="
+      },
+      {
+        "n": "7",
+        "tag": "Lower coil - Magnetization Preset [ATS]",
+        "bytes": "4 byte",
+        "source": "CGM MPI Station",
+        "example": "11500Ats"
+      },
+      {
+        "n": "8",
