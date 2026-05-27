@@ -714,3 +714,35 @@ async function startMockPlc(lineName) {
   const statusEvents = [];
   for (const evt of journey) {
     if (evt.kind === "status") { statusEvents.push(evt); continue; }
+    if (!eventsBySerial[evt.serial]) {
+      eventsBySerial[evt.serial] = [];
+      serialOrder.push(evt.serial);
+    }
+    eventsBySerial[evt.serial].push(evt);
+  }
+
+  /* Stagger ~ time for one wheel to clear the first gantry's slice. The
+   * gantry queues handle real contention if anyone overlaps.            */
+  const STAGGER_MS = 11000;
+
+  while (plcRunning[lineName]) {
+    const wheelTasks = serialOrder.map((serial, i) => (async () => {
+      await sleep(REDUCED_MOTION ? 0 : i * STAGGER_MS);
+      for (const evt of eventsBySerial[serial]) {
+        if (!plcRunning[lineName]) return;
+        try {
+          await acceptPlcEvent({
+            line: lineName, serial, fromZone: evt.from, toZone: evt.to, gantry: evt.gantry,
+          });
+        } catch (err) {
+          console.error("[mock-plc:" + lineName + "]", err);
+        }
+      }
+    })());
+
+    const statusTask = (async () => {
+      for (let i = 0; i < statusEvents.length; i++) {
+        if (!plcRunning[lineName]) return;
+        await sleep(REDUCED_MOTION ? 0 : (i + 1) * STAGGER_MS * 0.7);
+        applyStationStatus(lineName, statusEvents[i].zone, statusEvents[i].to);
+      }
