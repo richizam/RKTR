@@ -811,3 +811,36 @@ function firstKnownSerial() {
   const keys = Object.keys(WHEELS);
   return keys.length ? keys[0] : null;
 }
+
+function readVisibleLabel(el) {
+  const labels = el.querySelectorAll(".station-label, .station-sublabel, .wheel-label");
+  return Array.from(labels).map((node) => node.textContent.trim()).filter(Boolean).join(" ");
+}
+
+function populatePopup({ lineName, sourceId, stationName, machineId, controller, statusInfo, wheel }) {
+  const source = [lineName, sourceId, stationName].filter(Boolean).join(" / ");
+  document.querySelector(".trace-popup .source").textContent = source;
+
+  setText("p-manufactureCode", wheel ? wheel.manufactureCode : "-");
+  setText("p-stamp", wheel ? wheel.stamp : "-");
+  setText("p-heatCode", wheel ? wheel.heatCode : "-");
+  setText("p-serialNumber", wheel ? wheel.serial : "(no wheel currently at this station)");
+  setText("p-operationNo", stationName || "-");
+  setText("p-machineId", machineId);
+  setText("p-controller", controller);
+  setText("p-partType", wheel ? wheel.partType : "-");
+  setText("p-dimensions", wheel ? wheel.dimensions : "-");
+
+  const chip = document.getElementById("p-status");
+  chip.textContent = statusInfo.text;
+  chip.classList.remove("working", "stopped", "off", "unknown");
+  chip.classList.add(statusInfo.chip);
+
+  currentParamName = stationName || "";
+  currentParamKey = paramKeyFromName(currentParamName);
+}
+
+function showPopup() {
+  document.getElementById("popup-backdrop").classList.add("show");
+  document.getElementById("trace-popup").classList.add("show");
+}
