@@ -1497,3 +1497,139 @@ const PROCESS_PARAMS = {
         "source": "Washing machine",
         "example": "25.C"
       },
+      {
+        "n": "2",
+        "tag": "Water Flow",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": "3lpm"
+      },
+      {
+        "n": "3",
+        "tag": "Filter health status",
+        "bytes": "1 byte",
+        "source": "Washing machine",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "4",
+        "tag": "Water level",
+        "bytes": "2 byte",
+        "source": "Washing machine",
+        "example": "450"
+      },
+      {
+        "n": "5",
+        "tag": "Water level pre-warning",
+        "bytes": "2 byte",
+        "source": "Washing machine",
+        "example": "350"
+      },
+      {
+        "n": "6",
+        "tag": "pump Status",
+        "bytes": "1 byte",
+        "source": "Washing machine",
+        "example": "if ok=1, Nok=0"
+      },
+      {
+        "n": "7",
+        "tag": "Program Number  / Receipe details",
+        "bytes": "10 byte",
+        "source": "Washing machine",
+        "example": "Rec245"
+      },
+      {
+        "n": "8",
+        "tag": "PLC Alarm  Details",
+        "bytes": "10 byte",
+        "source": "Washing machine",
+        "example": ""
+      },
+      {
+        "n": "9",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": "250sc"
+      },
+      {
+        "n": "10",
+        "tag": "End Cycle",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      },
+      {
+        "n": "11",
+        "tag": "Dryer blower running cofirmation",
+        "bytes": "2byte",
+        "source": "Washing machine",
+        "example": ""
+      },
+      {
+        "n": "12",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": ""
+      },
+      {
+        "n": "13",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": ""
+      },
+      {
+        "n": "14",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": ""
+      },
+      {
+        "n": "15",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": ""
+      },
+      {
+        "n": "16",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": ""
+      }
+    ]
+  },
+  "OP110": {
+    "equipment": "OP110 Shot peening",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "2",
+        "tag": "Program Number",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "3",
+        "tag": "",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
