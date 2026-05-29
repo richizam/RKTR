@@ -1633,3 +1633,139 @@ const PROCESS_PARAMS = {
         "tag": "Machine waiting time for gantry",
         "bytes": "4 byte",
         "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "5",
+        "tag": "Program Number",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "6",
+        "tag": "Part peening time",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "7",
+        "tag": "flow rate",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "8",
+        "tag": "Turbine RPM",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "9",
+        "tag": "induv Turbine current",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "10",
+        "tag": "Roller RPM(Peening chamber)",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "11",
+        "tag": "Shorts level ( Weight)",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "12",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "13",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "14",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "15",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "16",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      }
+    ]
+  },
+  "OP120": {
+    "equipment": "OP120 Oil and Painting",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "2",
+        "tag": "Program Number",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "3",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
