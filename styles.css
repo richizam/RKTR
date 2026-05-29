@@ -472,3 +472,40 @@ body {
 }
 
 .wheel-drawer .title-prefix {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.wheel-drawer .subtitle {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wheel-drawer .body {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.wd-section {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(33, 58, 82, 0.5);
+}
+
+.wd-section:last-child {
+  border-bottom: 0;
+}
+
+.wd-section h3 {
+  margin: 0 0 10px;
+  color: var(--text-muted);
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+.wd-hero {
+  padding-top: 16px;
