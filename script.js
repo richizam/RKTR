@@ -746,3 +746,36 @@ async function startMockPlc(lineName) {
         await sleep(REDUCED_MOTION ? 0 : (i + 1) * STAGGER_MS * 0.7);
         applyStationStatus(lineName, statusEvents[i].zone, statusEvents[i].to);
       }
+    })();
+
+    await Promise.all([...wheelTasks, statusTask]);
+    await sleep(REDUCED_MOTION ? 0 : 600);
+  }
+}
+
+function applyStationStatus(lineName, zoneId, statusClass) {
+  const zone = zoneRegistry[lineName][zoneId];
+  if (!zone || !zone.element) return;
+  const el = zone.element;
+  ["status-running", "status-warning", "status-error", "status-idle", "status-offline"]
+    .forEach((c) => el.classList.remove(c));
+  el.classList.add(statusClass);
+}
+
+/* -------------------- 6. Popup ------------------------------------------- */
+
+function wireClicks(svgRoot, lineName) {
+  svgRoot.addEventListener("click", (event) => {
+    const wheelEl = event.target.closest(".wheel-sprite, .wheel-anchor");
+    if (wheelEl) {
+      const serial = wheelEl.getAttribute("data-serial");
+      if (serial && WHEELS[serial]) {
+        openWheelDrawer(serial);
+        return;
+      }
+    }
+    const stationEl = event.target.closest(".station");
+    if (stationEl) openPopupForElement(stationEl, lineName);
+  });
+}
+
