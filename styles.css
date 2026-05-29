@@ -509,3 +509,39 @@ body {
 
 .wd-hero {
   padding-top: 16px;
+  padding-bottom: 14px;
+}
+
+.wd-serial-big {
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: 0.3px;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 12px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--status-running);
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.status-pill.transit {
+  background: rgba(251, 191, 36, 0.1);
+  color: var(--status-warning);
+}
+
+.status-pill.queued {
+  background: rgba(156, 163, 175, 0.1);
+  color: var(--text-muted);
+}
+
+.status-pill.complete {
