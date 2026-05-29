@@ -779,3 +779,35 @@ function wireClicks(svgRoot, lineName) {
   });
 }
 
+function openPopupForElement(el, lineName) {
+  const sourceId = el.id || "anchor";
+  const stationName = el.getAttribute("data-station-name") || readVisibleLabel(el);
+  const machineId = el.getAttribute("data-machine-id") || "-";
+  const controller = el.getAttribute("data-controller") || "-";
+  const zoneId = el.getAttribute("data-zone-id");
+  const statusClass = Array.from(el.classList).find((c) => c.startsWith("status-")) || "status-running";
+  const statusInfo = STATUS[statusClass] || STATUS["status-idle"];
+
+  let serial = null;
+  if (el.classList.contains("wheel-sprite")) {
+    serial = el.getAttribute("data-serial");
+  } else if (el.classList.contains("wheel-anchor")) {
+    serial = el.getAttribute("data-serial") || firstKnownSerial();
+  } else if (zoneId && zoneOccupancy[lineName]) {
+    serial = zoneOccupancy[lineName][zoneId] || null;
+  }
+  /* Pre-seed / last-known fallback so any click during the demo lands on a
+   * real wheel record, even before the mock PLC has reached this zone.   */
+  if (!serial && zoneId && lastWheelAtZone[lineName]) {
+    serial = lastWheelAtZone[lineName][zoneId] || null;
+  }
+  const wheel = serial ? WHEELS[serial] : null;
+
+  populatePopup({ lineName, sourceId, stationName, machineId, controller, statusInfo, wheel });
+  showPopup();
+}
+
+function firstKnownSerial() {
+  const keys = Object.keys(WHEELS);
+  return keys.length ? keys[0] : null;
+}
