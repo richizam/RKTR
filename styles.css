@@ -545,3 +545,40 @@ body {
 }
 
 .status-pill.complete {
+  background: rgba(58, 224, 255, 0.1);
+  color: var(--line-cyan);
+}
+
+.wd-kv {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 7px 12px;
+  font-size: 12.5px;
+}
+
+.wd-kv .k {
+  color: var(--text-muted);
+}
+
+.wd-kv .v {
+  color: var(--text-primary);
+  font-family: Consolas, "Courier New", monospace;
+  overflow-wrap: anywhere;
+}
+
+.wd-current {
+  padding: 10px 12px;
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+}
+
+.wd-current:hover,
+.wd-current:focus {
+  border-color: var(--line-cyan);
+  background: rgba(58, 224, 255, 0.05);
+  outline: none;
+}
+
+.wd-current .label {
