@@ -844,3 +844,35 @@ function showPopup() {
   document.getElementById("popup-backdrop").classList.add("show");
   document.getElementById("trace-popup").classList.add("show");
 }
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value || "-";
+}
+
+/* -------------------- 7. Process parameters panel ------------------------ */
+
+/* Map a station's display name to a PROCESS_PARAMS key, e.g.
+ * "OP70C ULTRASONIC TESTING" -> "OP70", "OP05 CAMERA STATION" -> "OP5".   */
+function paramKeyFromName(name) {
+  const m = (name || "").match(/OP\s*0*(\d+)/i);
+  return m ? "OP" + m[1] : null;
+}
+
+function initParamPanel() {
+  const openBtn = document.getElementById("open-params");
+  const closeBtn = document.getElementById("pp-close");
+  const backdrop = document.getElementById("param-backdrop");
+  if (openBtn) openBtn.addEventListener("click", (e) => { e.preventDefault(); openParamPanel(); });
+  if (closeBtn) closeBtn.addEventListener("click", closeParamPanel);
+  if (backdrop) backdrop.addEventListener("click", closeParamPanel);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeParamPanel();
+  });
+}
+
+function openParamPanel() {
+  const data = (typeof PROCESS_PARAMS !== "undefined" && currentParamKey)
+    ? PROCESS_PARAMS[currentParamKey] : null;
+  const tbody = document.getElementById("pp-rows");
+  const eqEl = document.getElementById("pp-equipment");
