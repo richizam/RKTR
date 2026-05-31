@@ -254,3 +254,39 @@
     <text class="station-sublabel" x="90" y="206">OP10/20 · VTL</text>
   </g>
 
+  <!-- STATION 06: VTL #5 -->
+  <g id="station-mach-06" class="station status-running"
+     data-station-name="OP10/20 VTL #5 — VDM 1600"
+     data-machine-id="RKTR-OP10-VTL-05"
+     data-zone-id="Z-VTL5"
+     data-zone-kind="station"
+     data-controller="Sinumerik One"
+     transform="translate(1314 248)">
+    <rect class="station-frame" x="0" y="0" width="180" height="124" rx="4"/>
+    <circle class="status-dot" cx="170" cy="10" r="6"/>
+    <text class="op-code" style="text-anchor:start" x="10" y="13">OP10/20</text>
+    <image href="images/op10-vtl.png" xlink:href="images/op10-vtl.png" x="4" y="22" width="172" height="80" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="90" y="117">Sinumerik One</text>
+    <line class="monitor-link" x1="90" y1="124" x2="90" y2="154"/>
+    <circle class="status-dot" cx="90" cy="154" r="7"/>
+    <rect class="label-box" x="-8" y="168" width="196" height="52" rx="4"/>
+    <text class="station-label" x="90" y="188">VDM 1600  #5</text>
+    <text class="station-sublabel" x="90" y="206">OP10/20 · VTL</text>
+  </g>
+
+  <!-- STATION 07: OP30 SPECHT 800 -->
+  <g id="station-mach-07" class="station status-running"
+     data-station-name="OP30 SPECHT 800 — HMC"
+     data-machine-id="RKTR-OP30-HMC-01"
+     data-zone-id="Z-OP30"
+     data-zone-kind="station"
+     data-controller="Fanuc 31iBP"
+     transform="translate(1546 248)">
+    <rect class="station-frame" x="0" y="0" width="180" height="124" rx="4"/>
+    <circle class="status-dot" cx="170" cy="10" r="6"/>
+    <text class="op-code" style="text-anchor:start" x="10" y="13">OP30</text>
+    <image href="images/op30-specht.png" xlink:href="images/op30-specht.png" x="4" y="22" width="172" height="80" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="90" y="117">Fanuc 31iBP</text>
+    <line class="monitor-link" x1="90" y1="124" x2="90" y2="154"/>
+    <circle class="status-dot" cx="90" cy="154" r="7"/>
+    <rect class="label-box" x="-8" y="168" width="196" height="52" rx="4"/>
