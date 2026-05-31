@@ -310,3 +310,55 @@
   <!-- STATION 09: OP100 Washing -->
   <g id="station-test-09" class="station status-running"
      data-station-name="OP100 WASHING STATION"
+     data-machine-id="RKTR-OP100-WSH-01"
+     data-zone-id="Z-OP100"
+     data-zone-kind="station"
+     data-controller="PLC"
+     transform="translate(1300 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP100</text>
+    <image href="images/op50-op100-wash.png" xlink:href="images/op50-op100-wash.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP100</text>
+    <text class="station-label" x="60" y="154">WASHING</text>
+    <text class="station-label" x="60" y="167">STATION</text>
+  </g>
+
+  <!-- STATION 10: OP110 Shot Peening -->
+  <g id="station-test-10" class="station status-running"
+     data-station-name="OP110 SHOT PEENING MACHINE"
+     data-machine-id="RKTR-OP110-PEN-01"
+     data-zone-id="Z-OP110"
+     data-zone-kind="station"
+     data-controller="PLC"
+     transform="translate(1449 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP110</text>
+    <image href="images/op110-peen.png" xlink:href="images/op110-peen.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">PLC</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP110</text>
+    <text class="station-label" x="60" y="154">SHOT</text>
+    <text class="station-label" x="60" y="167">PEENING</text>
+  </g>
+
+  <!-- STATION 11: OP130 Visual Inspection -->
+  <g id="station-test-11" class="station status-running"
+     data-station-name="OP130 VISUAL INSPECTION STATION"
+     data-machine-id="RKTR-OP130-VIS-01"
+     data-zone-id="Z-OP130"
+     data-zone-kind="station"
+     data-controller="Through gantry control"
+     transform="translate(1598 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP130</text>
+    <image href="images/op130-visual.png" xlink:href="images/op130-visual.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">Through gantry control</text>
