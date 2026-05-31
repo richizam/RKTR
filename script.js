@@ -876,3 +876,36 @@ function openParamPanel() {
     ? PROCESS_PARAMS[currentParamKey] : null;
   const tbody = document.getElementById("pp-rows");
   const eqEl = document.getElementById("pp-equipment");
+  if (!tbody || !eqEl) return;
+
+  tbody.textContent = "";
+  eqEl.textContent = data ? data.equipment : (currentParamName || "—");
+
+  const params = (data && data.params) ? data.params : [];
+  if (!params.length) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 5;
+    td.className = "pp-empty";
+    td.textContent = "No process parameters defined for this equipment.";
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  } else {
+    for (const p of params) {
+      const tr = document.createElement("tr");
+      const cells = [p.n ? "PP" + p.n : "—", p.tag, p.bytes, p.source, p.example];
+      cells.forEach((cell) => {
+        const td = document.createElement("td");
+        td.textContent = (cell === undefined || cell === null || cell === "") ? "—" : cell;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    }
+  }
+
+  document.getElementById("param-backdrop").classList.add("show");
+  document.getElementById("param-panel").classList.add("show");
+}
+
+function closeParamPanel() {
+  const bd = document.getElementById("param-backdrop");
