@@ -1769,3 +1769,139 @@ const PROCESS_PARAMS = {
       {
         "n": "4",
         "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "5",
+        "tag": "End Cycle",
+        "bytes": "4 byte",
+        "source": "Washing machine",
+        "example": "if 1=Cycle End, 0=Cycle not end"
+      }
+    ]
+  },
+  "OP130": {
+    "equipment": "OP130 Visual inspection",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Measurement Results (Coordinates): Number of Part ok / Not ok",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "2",
+        "tag": "Machine waiting time for gantry",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "3",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "5",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "6",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "7",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      }
+    ]
+  },
+  "OP140": {
+    "equipment": "OP140 Outfeed conveyor",
+    "params": [
+      {
+        "n": "1",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "2",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "3",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "4",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      },
+      {
+        "n": "5",
+        "tag": "Spare",
+        "bytes": "4 byte",
+        "source": "Gantry IPC / MES interface",
+        "example": ""
+      }
+    ]
+  }
+};
