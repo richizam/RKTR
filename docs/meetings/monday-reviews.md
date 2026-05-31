@@ -18,3 +18,8 @@ on unclear requirements. This file collects decisions and open items per cycle.
 - Demoed the right-side wheel drawer (route list) and the process-parameters panel.
 - Feedback: good direction; add the controller field to the popup.
 - **Open:** PLC tag addresses still "awaiting supplier".
+
+## Review — final build
+- Demoed final build: photos embedded, drawer + params + controller field complete.
+- Agreed this is the prototype to present at the practice defense.
+- Remaining items are customer/supplier-side (transport, tag addresses) — out of prototype scope.
