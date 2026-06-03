@@ -362,3 +362,55 @@
     <text class="op-code" style="text-anchor:start" x="8" y="11">OP130</text>
     <image href="images/op130-visual.png" xlink:href="images/op130-visual.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
     <text class="ctrl-label" x="60" y="86">Through gantry control</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP130</text>
+    <text class="station-label" x="60" y="154">VISUAL</text>
+    <text class="station-label" x="60" y="167">INSPECTION</text>
+  </g>
+
+  <!-- STATION 12: OP140 Outfeed Conveyor -->
+  <g id="station-test-12" class="station status-running"
+     data-station-name="OP140 OUTFEED CONVEYOR"
+     data-machine-id="RKTR-OP140-CNV-01"
+     data-zone-id="Z-OP140"
+     data-zone-kind="station"
+     data-controller="Through gantry control"
+     transform="translate(1747 248)">
+    <rect class="station-frame" x="0" y="0" width="120" height="92" rx="3"/>
+    <circle class="status-dot" cx="112" cy="8" r="5"/>
+    <text class="op-code" style="text-anchor:start" x="8" y="11">OP140</text>
+    <image href="images/op140-outfeed.png" xlink:href="images/op140-outfeed.png" x="4" y="18" width="112" height="52" preserveAspectRatio="xMidYMid meet"/>
+    <text class="ctrl-label" x="60" y="86">Through gantry control</text>
+    <line class="monitor-link" x1="60" y1="92" x2="60" y2="116"/>
+    <circle class="status-dot" cx="60" cy="116" r="6"/>
+    <rect class="label-box" x="-6" y="128" width="132" height="56" rx="3"/>
+    <text class="op-code" x="60" y="141">OP140</text>
+    <text class="station-label" x="60" y="154">OUTFEED</text>
+    <text class="station-label" x="60" y="167">CONVEYOR</text>
+  </g>
+
+  <!-- Wheel sprite layer -->
+  <g id="wheel-sprite-layer-testing"></g>
+
+  <!-- Legend -->
+  <g id="legend-testing" transform="translate(62 730)">
+    <rect class="legend-box" x="0" y="0" width="660" height="160" rx="6"/>
+    <text class="legend-title" x="18" y="28">LEGEND</text>
+    <rect class="station-frame" x="18" y="48" width="42" height="34" rx="3"/>
+    <text class="legend-text" x="78" y="62">Monitored equipment / station</text>
+    <circle class="status-dot" cx="39" cy="110" r="7" fill="#4ade80"/>
+    <text class="legend-text" x="78" y="114">Status marker (green = running)</text>
+    <use href="#icon-gantry-t" x="290" y="42" width="42" height="54"/>
+    <text class="legend-text" x="350" y="64">Animated linear gantry head</text>
+    <rect x="290" y="100" width="42" height="28" rx="3" fill="none" stroke="#b6f5ff" stroke-width="2.4" style="filter:drop-shadow(0 0 6px #7ff0ff)"/>
+    <text class="legend-text" x="350" y="118">Active station (wheel arriving)</text>
+    <path class="flow" d="M502 62 H592" marker-end="url(#arrow-flow-t)"/>
+    <text class="legend-text" x="502" y="138">Process flow →</text>
+  </g>
+
+  <!-- Process flow arrow -->
+  <path class="flow" d="M72 970 H1848" marker-end="url(#arrow-flow-t)"/>
+  <text class="flow-label" x="1650" y="956">PROCESS FLOW: OP40 → OP140</text>
+</svg>
