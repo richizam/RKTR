@@ -909,3 +909,35 @@ function openParamPanel() {
 
 function closeParamPanel() {
   const bd = document.getElementById("param-backdrop");
+  const pp = document.getElementById("param-panel");
+  if (bd) bd.classList.remove("show");
+  if (pp) pp.classList.remove("show");
+}
+
+/* -------------------- 8. Wheel drawer ------------------------------------ */
+
+/* Right-side drawer that opens when an operator clicks a wheel sprite —
+ * shows the wheel's identity, current location, and a Route list (the
+ * history of stations it has visited so far + the upcoming ones, in plant
+ * order). Non-modal: the line behind stays interactive.                  */
+
+function initWheelDrawer() {
+  const closeBtn = document.getElementById("wd-close");
+  if (closeBtn) closeBtn.addEventListener("click", closeWheelDrawer);
+
+  const current = document.getElementById("wd-current");
+  if (current) {
+    current.addEventListener("click", () => openStationForCurrentDrawerWheel());
+    current.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openStationForCurrentDrawerWheel();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const pp = document.getElementById("param-panel");
+    if (pp && pp.classList.contains("show")) return;
+    const pop = document.getElementById("trace-popup");
