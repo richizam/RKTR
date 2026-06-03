@@ -582,3 +582,39 @@ body {
 }
 
 .wd-current .label {
+  color: var(--text-primary);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.wd-current .label::after {
+  content: " \2192";
+  color: var(--line-cyan);
+}
+
+.wd-current .hint {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 10.5px;
+}
+
+.wd-route-section {
+  padding-bottom: 24px;
+}
+
+.route-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.route-row {
+  display: grid;
+  grid-template-columns: 16px 64px 1fr 64px 12px;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 6px;
+  border-radius: 3px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+}
