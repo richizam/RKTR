@@ -941,3 +941,36 @@ function initWheelDrawer() {
     const pp = document.getElementById("param-panel");
     if (pp && pp.classList.contains("show")) return;
     const pop = document.getElementById("trace-popup");
+    if (pop && pop.classList.contains("show")) return;
+    closeWheelDrawer();
+  });
+
+  document.addEventListener("mousedown", (event) => {
+    const drawer = document.getElementById("wheel-drawer");
+    if (!drawer || !drawer.classList.contains("show")) return;
+    if (drawer.contains(event.target)) return;
+    /* Clicking inside an SVG line is fine — keep the drawer open so the
+     * operator can keep exploring. Only close on clicks well outside.   */
+    if (event.target.closest("svg")) return;
+    if (event.target.closest(".trace-popup, .param-panel")) return;
+    closeWheelDrawer();
+  });
+}
+
+function openWheelDrawer(serial) {
+  if (!serial || !WHEELS[serial]) return;
+  currentDrawerSerial = serial;
+  populateWheelDrawer(serial);
+  document.getElementById("wheel-drawer").classList.add("show");
+}
+
+function closeWheelDrawer() {
+  currentDrawerSerial = null;
+  const d = document.getElementById("wheel-drawer");
+  if (d) d.classList.remove("show");
+}
+
+function populateWheelDrawer(serial) {
+  const wheel = WHEELS[serial];
+  if (!wheel) return;
+  const line = wheel.currentLine || guessLineForWheel(serial);
