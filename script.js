@@ -1039,3 +1039,35 @@ function renderCurrentLocation(wheel, line) {
   if (!zoneId || !line) {
     labelEl.textContent = "Not yet on the line";
     return;
+  }
+  const here = findRouteZone(line, zoneId);
+  if (here) {
+    labelEl.textContent = here.op + " · " + here.code;
+  } else {
+    labelEl.textContent = zoneId;
+  }
+}
+
+function openStationForCurrentDrawerWheel() {
+  if (!currentDrawerSerial) return;
+  const wheel = WHEELS[currentDrawerSerial];
+  if (!wheel || !wheel.currentLine) return;
+  const zoneId = wheel.inTransit ? wheel.transitTo : wheel.currentZone;
+  if (!zoneId) return;
+  openStationPopupByZone(wheel.currentLine, zoneId);
+}
+
+function openStationPopupByZone(lineName, zoneId) {
+  const zone = zoneRegistry[lineName] && zoneRegistry[lineName][zoneId];
+  if (!zone || !zone.element) return;
+  openPopupForElement(zone.element, lineName);
+}
+
+function renderRouteList(wheel, line) {
+  const container = document.getElementById("wd-route");
+  if (!container) return;
+  container.textContent = "";
+
+  if (!line || !ROUTE_ZONES[line]) {
+    const empty = document.createElement("div");
+    empty.className = "route-row pending";
