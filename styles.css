@@ -655,3 +655,39 @@ body {
 .route-row.current .icon {
   color: var(--line-cyan);
 }
+
+.route-row.pending .icon,
+.route-row.pending .op,
+.route-row.pending .code,
+.route-row.pending .ts {
+  color: rgba(156, 163, 175, 0.45);
+}
+
+.route-row.pending .arrow {
+  visibility: hidden;
+}
+
+.route-row.done,
+.route-row.current {
+  cursor: pointer;
+}
+
+.route-row.done:hover,
+.route-row.current:hover {
+  background: rgba(58, 224, 255, 0.08);
+}
+
+.parked-wheel {
+  cursor: pointer;
+}
+
+.parked-wheel:hover {
+  filter: drop-shadow(0 0 7px var(--line-cyan));
+}
+
+@media (max-width: 720px) {
+  .wheel-drawer {
+    width: 100vw;
+    border-left: 0;
+    border-top: 1px solid var(--line-cyan);
+  }
