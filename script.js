@@ -974,3 +974,35 @@ function populateWheelDrawer(serial) {
   const wheel = WHEELS[serial];
   if (!wheel) return;
   const line = wheel.currentLine || guessLineForWheel(serial);
+
+  setText("wd-serial-head", wheel.serial);
+  setText("wd-line", line ? ("Line · " + line) : "—");
+  setText("wd-serial-big", wheel.serial);
+  setText("wd-serial", wheel.serial);
+  setText("wd-partType", wheel.partType);
+  setText("wd-heatCode", wheel.heatCode);
+  setText("wd-mfgCode", wheel.manufactureCode);
+  setText("wd-stamp", wheel.stamp);
+
+  renderWheelStatus(wheel, line);
+  renderCurrentLocation(wheel, line);
+  renderRouteList(wheel, line);
+}
+
+function guessLineForWheel(serial) {
+  /* Fallback for the case where a wheel was clicked before the PLC has
+   * moved it anywhere yet. The Machining line is the canonical entry. */
+  return "Machining line";
+}
+
+function renderWheelStatus(wheel, line) {
+  const pill = document.getElementById("wd-status");
+  if (!pill) return;
+  pill.classList.remove("transit", "queued", "complete");
+
+  const route = line ? ROUTE_ZONES[line] : null;
+  if (!line || !route) {
+    pill.textContent = "Queued";
+    pill.classList.add("queued");
+    return;
+  }
