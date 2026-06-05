@@ -1071,3 +1071,36 @@ function renderRouteList(wheel, line) {
   if (!line || !ROUTE_ZONES[line]) {
     const empty = document.createElement("div");
     empty.className = "route-row pending";
+    empty.textContent = "No route data for this wheel.";
+    container.appendChild(empty);
+    return;
+  }
+
+  /* Build a "visited at" lookup from the wheel's history for fast row
+   * status. Only entries on this line are relevant.                    */
+  const visited = {};
+  for (const r of wheel.route) {
+    if (r.line === line) visited[r.zoneId] = r.ts;
+  }
+  const currentZone = wheel.currentZone;
+  const transitTo = wheel.inTransit ? wheel.transitTo : null;
+
+  ROUTE_ZONES[line].forEach((z) => {
+    const row = document.createElement("div");
+    let stateClass = "pending";
+    let icon = "○"; // ○
+    let ts = "";
+    if (visited[z.zoneId]) {
+      ts = visited[z.zoneId];
+      if (z.zoneId === currentZone && !wheel.inTransit) {
+        stateClass = "current";
+        icon = "▸"; // ▸
+      } else {
+        stateClass = "done";
+        icon = "✓"; // ✓
+      }
+    } else if (z.zoneId === transitTo) {
+      stateClass = "current";
+      icon = "▸";
+      ts = "…";
+    }
