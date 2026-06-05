@@ -1006,3 +1006,36 @@ function renderWheelStatus(wheel, line) {
     pill.classList.add("queued");
     return;
   }
+
+  if (wheel.inTransit && wheel.transitTo) {
+    const dest = findRouteZone(line, wheel.transitTo);
+    pill.textContent = "In transit · → " + (dest ? (dest.op + " " + dest.code) : wheel.transitTo);
+    pill.classList.add("transit");
+    return;
+  }
+
+  if (!wheel.currentZone) {
+    pill.textContent = "Queued · " + line.split(" ")[0];
+    pill.classList.add("queued");
+    return;
+  }
+
+  const here = findRouteZone(line, wheel.currentZone);
+  const last = route[route.length - 1];
+  if (here && last && here.zoneId === last.zoneId) {
+    pill.textContent = "Complete · " + here.op;
+    pill.classList.add("complete");
+  } else if (here) {
+    pill.textContent = "In progress · " + here.op;
+  } else {
+    pill.textContent = "In progress";
+  }
+}
+
+function renderCurrentLocation(wheel, line) {
+  const labelEl = document.getElementById("wd-current-label");
+  if (!labelEl) return;
+  const zoneId = wheel.inTransit ? wheel.transitTo : wheel.currentZone;
+  if (!zoneId || !line) {
+    labelEl.textContent = "Not yet on the line";
+    return;
