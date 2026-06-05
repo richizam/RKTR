@@ -691,3 +691,39 @@ body {
     border-left: 0;
     border-top: 1px solid var(--line-cyan);
   }
+}
+
+.ctrl-label {
+  fill: #3ae0ff;
+  font: 500 8px Consolas, "Courier New", monospace;
+  text-anchor: middle;
+}
+
+@media (max-width: 720px) {
+  .page-header {
+    display: block;
+    padding: 16px;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .tabs,
+  .schematic-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .tab-btn {
+    min-width: 0;
+    flex: 1 1 0;
+    padding-inline: 8px;
+    font-size: 11px;
+  }
+
+  .trace-popup .body {
+    grid-template-columns: 1fr;
+  }
+}
