@@ -1104,3 +1104,35 @@ function renderRouteList(wheel, line) {
       icon = "▸";
       ts = "…";
     }
+    row.className = "route-row " + stateClass;
+    row.setAttribute("data-zone-id", z.zoneId);
+
+    const iconEl = document.createElement("span");
+    iconEl.className = "icon";
+    iconEl.textContent = icon;
+    const opEl = document.createElement("span");
+    opEl.className = "op";
+    opEl.textContent = z.op;
+    const codeEl = document.createElement("span");
+    codeEl.className = "code";
+    codeEl.textContent = z.code;
+    const tsEl = document.createElement("span");
+    tsEl.className = "ts";
+    tsEl.textContent = ts;
+    const arrEl = document.createElement("span");
+    arrEl.className = "arrow";
+    arrEl.textContent = (stateClass === "pending") ? "" : "›"; // ›
+
+    row.appendChild(iconEl);
+    row.appendChild(opEl);
+    row.appendChild(codeEl);
+    row.appendChild(tsEl);
+    row.appendChild(arrEl);
+
+    if (stateClass !== "pending") {
+      row.addEventListener("click", () => openStationPopupByZone(line, z.zoneId));
+    }
+
+    container.appendChild(row);
+  });
+}
